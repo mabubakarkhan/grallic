@@ -34,6 +34,7 @@
 	<link rel="shortcut icon" href="favicon.png">
 
 	<link rel="stylesheet" href="<?=CSS?>style.css" />
+	<link rel="stylesheet" href="<?=CSS?>custom.css" />
 </head>
 
 <body class="preload">
@@ -56,124 +57,41 @@
 				</a>
 			</div>
 			<ul>
-				<li class="current has-children">
+				<li class="<?=$home_page_nav?>">
 					<a href="#">
 						Home
 					</a>
-					<div class="sub-menu">
-						<div class="wrapper">
-							<ul>
-								<li>
-									<a href="index-2.html">HomePage_v1</a>
-								</li>
-								<li>
-									<a href="index-3.html">HomePage_v2</a>
-								</li>
-								<li class="current">
-									<a href="index-4.html">HomePage_v3</a>
-								</li>
-								<li>
-									<a href="index-5.html">HomePage_v4</a>
-								</li>
-								<li>
-									<a href="index-6.html">HomePage_v5</a>
-								</li>
-								<li>
-									<a href="index-7.html">HomePage_v6</a>
-								</li>
-								<li>
-									<a href="index-8.html">HomePage_v7</a>
-								</li>
-								<li>
-									<a href="index-9.html">HomePage_v8</a>
-								</li>
-								<li>
-									<a href="index-10.html">HomePage_v9</a>
-								</li>
-								<li>
-									<a href="index-11.html">HomePage_v10</a>
-								</li>
-								<li>
-									<a href="index-12.html">HomePage_v11</a>
-								</li>
-								<li>
-									<a href="index-13.html">HomePage_v12</a>
-								</li>
-								<li>
-									<a href="index-14.html">HomePage_v13</a>
-								</li>
-								<li>
-									<a href="index-15.html">HomePage_v14</a>
-								</li>
-								<li>
-									<a href="index-16.html">HomePage_v15</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 				</li>
 				<li class="has-children">
 					<a href="#">
-						Page
+						Menu
 					</a>
 					<div class="sub-menu">
 						<div class="wrapper">
 							<ul>
-								<li>
-									<a href="about-us.html">About Us</a>
-								</li>
-								<li>
-									<a href="contact-us.html">Contact Us</a>
-								</li>
-								<li>
-									<a href="coming-soon.html">Coming Soon</a>
-								</li>
-								<li class="has-children">
-									<a href="gallery-three-columns.html">Gallery
-										<i class="zmdi zmdi-chevron-right"></i>
-									</a>
-									<div class="sub-menu">
-										<div class="wrapper">
-											<ul>
-												<li>
-													<a href="gallery-three-columns.html">Three Colums</a>
-												</li>
-												<li>
-													<a href="gallery-four-columns.html">Four Columns</a>
-												</li>
-												<li>
-													<a href="gallery-three-columns-wide.html">Three Columns Wide</a>
-												</li>
-												<li>
-													<a href="gallery-four-columns-wide.html">Four Colums Wide</a>
-												</li>
-												<li>
-													<a href="masonry-grid.html">Masonry</a>
-												</li>
-												<li>
-													<a href="masonry-wide.html">Masonry Wide</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li>
-									<a href="project.html">Project</a>
-								</li>
-								<li>
-									<a href="meet-the-chefs.html">Meet The Cheefs</a>
-								</li>
-								<li>
-									<a href="404.html">404</a>
-								</li>
+								<?php foreach ($cats as $key => $cat): ?>
+									<?php if ($cat['deal'] == 'no'): ?>
+										<li class="has-children">
+											<a href="<?=BASEURL.'category/'.$cat['slug']?>"><?=$cat['title']?>
+												<i class="zmdi zmdi-chevron-right"></i>
+											</a>
+											<div class="sub-menu">
+												<div class="wrapper">
+													<ul>
+														<?php foreach ($products as $key => $product): ?>
+															<?php if ($product['category_id'] == $cat['category_id']): ?>
+																<li><a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a></li>
+															<?php endif ?>
+														<?php endforeach ?>
+													</ul>
+												</div>
+											</div>
+										</li>
+									<?php endif ?>
+								<?php endforeach ?>
 							</ul>
 						</div>
 					</div>
-				</li>
-				<li>
-					<a href="menu.html">
-						Menu
-					</a>
 				</li>
 				<li class="has-children">
 					<a href="#">
@@ -192,75 +110,10 @@
 						</div>
 					</div>
 				</li>
-				<li class="has-children">
+				<li>
 					<a href="#">
 						Blog
 					</a>
-					<div class="sub-menu">
-						<div class="wrapper">
-							<ul>
-								<li>
-									<a href="blog-masonry.html">Blog Masonry</a>
-								</li>
-								<li>
-									<a href="blog-masonry-wide.html">Blog Masonry Wide</a>
-								</li>
-								<li>
-									<a href="blog-standard-right-sidebar.html">Blog Standard Right Sidebar</a>
-								</li>
-								<li>
-									<a href="blog-standard-left-sidebar.html">Blog Standard Left Sidebar</a>
-								</li>
-								<li>
-									<a href="blog-standard-no-sidebar.html">Blog Standard No Sidebar</a>
-								</li>
-								<li>
-									<a href="blog-single.html">Blog Single</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li class="has-children">
-					<a href="#">
-						Shop
-					</a>
-					<div class="sub-menu">
-						<div class="wrapper">
-							<ul>
-								<li>
-									<a href="shop-list.html">Shop List</a>
-								</li>
-								<li>
-									<a href="shop-three-column.html">Three Columns Grid</a>
-								</li>
-								<li>
-									<a href="shop-three-column-wide.html">Three Columns Wide</a>
-								</li>
-								<li>
-									<a href="shop-four-column.html">Four Colums Grid</a>
-								</li>
-								<li>
-									<a href="shop-four-column-wide.html">Four Colums Wide</a>
-								</li>
-								<li>
-									<a href="shop-cart.html">Shop Cart</a>
-								</li>
-								<li>
-									<a href="shop-single.html">Shop Single</a>
-								</li>
-								<li>
-									<a href="sign-in.html">Sign In</a>
-								</li>
-								<li>
-									<a href="sign-up.html">Sign Up</a>
-								</li>
-								<li>
-									<a href="checkout.html">CheckOut</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 				</li>
 			</ul>
 			<div class="action align-items-center">
@@ -572,34 +425,33 @@
 			<div class="contact-part">
 				<div class="contact-line">
 					<span class="lnr lnr-home"></span>
-					<span>No 40 Baria Sreet 133/2</span>
+					<span><?=$setting['address']?></span>
 				</div>
 				<div class="contact-line">
 					<a href="tel:+15618003666666">
 						<span class="lnr lnr-phone-handset"></span>
-						<span> + (156) 1800-366-6666</span>
+						<span><?=$setting['phone']?></span>
 					</a>
 				</div>
 				<div class="contact-line">
 					<a href="#">
 						<span class="lnr lnr-envelope"></span>
-						<span><span class="__cf_email__"
-								data-cfemail="0e4b7c676d23363c4e6b766f637e626b206d6163">[email&#160;protected]</span></span>
+						<span><span class="__cf_email__"><?=$setting['email']?></span></span>
 					</a>
 				</div>
 			</div>
 
 			<div class="social">
-				<a href="#">
+				<a href="<?=$setting['twitter_link']?>">
 					<i class="zmdi zmdi-twitter"></i>
 				</a>
-				<a href="#">
+				<a href="<?=$setting['facebook_link']?>">
 					<i class="zmdi zmdi-facebook-box"></i>
 				</a>
-				<a href="#">
+				<a href="<?=$setting['linkedin_link']?>">
 					<i class="zmdi zmdi-linkedin"></i>
 				</a>
-				<a href="#">
+				<a href="<?=$setting['instagram_link']?>">
 					<i class="zmdi zmdi-instagram"></i>
 				</a>
 			</div>

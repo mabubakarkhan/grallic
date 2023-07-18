@@ -384,6 +384,12 @@
                     <span class="site-menu-title">Blog</span>
                 </a>
             </li>
+            <li rel="setting" class="site-menu-item">
+                <a class="animsition-link" href="<?=BASEURL?>admin/setting">
+                    <i class="site-menu-icon md-file" aria-hidden="true"></i>
+                    <span class="site-menu-title">Setting</span>
+                </a>
+            </li>
 
 
           </ul>

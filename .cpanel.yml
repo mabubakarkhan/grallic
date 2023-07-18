@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/advicedrs/public_html/
+    - export DEPLOYPATH=/home/cubixtechnologyc/public_html/
     - /bin/cp * $DEPLOYPATH

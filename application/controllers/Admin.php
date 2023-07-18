@@ -479,10 +479,11 @@ class Admin extends CI_Controller {
 	{
 		$user = $this->check_login();
 		$data['q'] = $this->model->setting();
+		$data['page_title'] = "Edit: Setting";
 		$data['mode'] = "edit";
 		$data['signin'] = FALSE;
-		$data['page_title'] = 'Setting';
-		$this->template('admin/setting',$data);
+		$data['menu'] = 'setting';
+		$this->template('admin/setting', $data);
 	}
 	public function edit_blog()
 	{

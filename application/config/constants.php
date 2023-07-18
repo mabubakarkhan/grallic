@@ -91,7 +91,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 }
 else
 {
-	define('BASEURL', 'https://advicedrs.com/');
+	define('BASEURL', 'http://grallic.cubixtechnology.co.uk/');
 }
 define('APP_TITLE', 'Grallic');
 define('ASSET', BASEURL.'asset/');

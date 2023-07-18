@@ -25,27 +25,26 @@
 								</div>
 							</form>
 							<div class="social">
-								<a href="#">
+								<a href="<?=$setting['twitter_link']?>">
 									<i class="zmdi zmdi-twitter"></i>
 								</a>
-								<a href="#">
+								<a href="<?=$setting['facebook_link']?>">
 									<i class="zmdi zmdi-facebook-box"></i>
 								</a>
-								<a href="#">
+								<a href="<?=$setting['linkedin_link']?>">
 									<i class="zmdi zmdi-linkedin"></i>
 								</a>
-								<a href="#">
+								<a href="<?=$setting['instagram_link']?>">
 									<i class="zmdi zmdi-instagram"></i>
 								</a>
 							</div>
 						</div>
 						<div class="col-md-3 col-xl-2  ml-xl-auto ft-col">
 							<h6>Contact Us</h6>
-							<p>No 40 Baria Sreet 133/2</p>
-							<p>+ (156) 1800-366-6666</p>
-							<p><a href="mailto:mail>" class="__cf_email__">mail@domain.com</a>
+							<p><?=$setting['address']?></p>
+							<p><?=$setting['phone']?></p>
+							<p><a href="mailto:<?=$setting['email']?>>" class="__cf_email__"><?=$setting['email']?></a>
 							</p>
-							<p>www.royate.com</p>
 						</div>
 					</div>
 				</div>
@@ -53,7 +52,7 @@
 		</div>
 		<div class="ft-bot">
 			<div class="container">
-				@ 2018 DesignGalaxy8. Get The Theme
+				&copy; <?=date(Y).' '.APP_TITLE?>.
 			</div>
 		</div>
 	</footer>

@@ -41,6 +41,7 @@ class Home extends CI_Controller {
 
 	public function template($page = '', $data = '')
 	{
+		$data['setting'] = $this->model->setting();
 		$data['seo_tags'] = $this->model->seo_tags();
 		$data['cats'] = $this->model->get_cats('active');
 		$this->load->view('header',$data);
@@ -60,6 +61,7 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['home_page_nav'] = 'current';
 		$data['page'] = $this->model->get_page_byid(1);
 		$data['meta_title'] = $data['page']['meta_title'];
 		$data['meta_key'] = $data['page']['meta_key'];
