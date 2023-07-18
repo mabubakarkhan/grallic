@@ -1,0 +1,11 @@
+1.	get categories
+	http://hotpocket.pk/api/get-cats
+
+2.	get deal products
+	http://hotpocket.pk/api/get-deal-products
+
+3.	get other products (non deal products)
+	http://hotpocket.pk/api/get-other-products
+
+4.	get category and its products
+	http://hotpocket.pk/api/product/product_id
