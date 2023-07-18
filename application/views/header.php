@@ -52,7 +52,7 @@
 
 		<nav class="navbar-desktop">
 			<div class="left">
-				<a href="index-2.html" class="logo">
+				<a href="<?=BASEURL?>" class="logo">
 					<img src="<?=IMG?>logo.png" alt="Royate">
 				</a>
 			</div>
@@ -62,7 +62,7 @@
 						Home
 					</a>
 				</li>
-				<li class="has-children">
+				<li class="has-children <?=$category_nav?>">
 					<a href="#">
 						Menu
 					</a>

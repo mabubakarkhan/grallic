@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $controller_exceptions = array('admin','api','seo');
 $route['404_override'] = '';
 
+$route["index"] = 'Home/index';
 $route["about-us"] = 'Home/about_us';
 $route["contact-us"] = 'Home/contact_us';
 

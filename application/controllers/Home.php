@@ -105,6 +105,7 @@ class Home extends CI_Controller {
 	public function category($slug)
 	{
 		$data['cat_'] = $this->model->get_row("SELECT * FROM `category` WHERE `slug` = '$slug';");
+		$data['category_nav'] = 'current';
 		if ($data['cat_']) {
 			$data['meta_title'] = $data['cat_']['meta_title'];
 			$data['meta_key'] = $data['cat_']['meta_key'];
