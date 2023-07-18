@@ -78,18 +78,16 @@
 	<script src="<?=VENDOR?>revolution-slider/js/revolution.extension.slideanims.min.js"></script>
 	<script src="<?=VENDOR?>revolution-slider/js/revolution.extension.video.min.js"></script>
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmXgQ65zpsjsEAfNPP9mBAz-5zjnIZBw"></script>
+	<script src="<?=JS?>theme-map.js"></script>
+
 	<script src="<?=VENDOR?>owl-carousel/js/owl.carousel.min.js"></script>
 
 	<script src="<?=JS?>sweetalert.min.js"></script>
 
 	<script src="<?=VENDOR?>hcmobilenav/hc-mobile-nav.js"></script>
 
-	<script src="<?=VENDOR?>jquery-ui/jquery-ui.min.js"></script>
-
-	<script src="<?=VENDOR?>date-picker/datepicker.js"></script>
-	<script src="<?=VENDOR?>date-picker/datepicker.en.js"></script>
-
-	<script src="<?=VENDOR?>jquery-timepicker-master/jquery.timepicker.min.js"></script>
+	<script src="<?=VENDOR?>flipster/jquery.flipster.min.js"></script>
 	<script src="<?=JS?>main.min.js"></script>
 </body>
 

@@ -1,5 +1,4 @@
-
-	<main>
+<main>
 
 		<div class="rev_slider_wrapper">
 			<div id="rev_slider_3" class="rev_slider" data-version="5.4.5">
@@ -122,133 +121,23 @@
 			</div>
 		</div>
 
-		<div class="slideshow-form on-mobile">
+		<section class="section-primary pt-150 pb-120">
 			<div class="container">
-				<form method="get">
-					<div class="inner">
-						<div class="form-holder">
-							<select class="form-control">
-								<option value="1 people">1 people</option>
-								<option value="2 people">2 people</option>
-								<option value="3 people">3 people</option>
-								<option value="4 people">4 people</option>
-								<option value="5 people">5 people</option>
-							</select>
-							<span class="lnr lnr-chevron-down"></span>
-						</div>
-						<div class="form-holder">
-							<input type="text" class="form-control datepicker-here" data-language="en"
-								data-date-format="dd - mm - yyyy" placeholder="Date">
-							<span class="lnr lnr-calendar-full big"></span>
-						</div>
-						<div class="form-holder">
-							<input type="text" class="form-control time-picker" placeholder="Time">
-							<span class="lnr lnr-clock big"></span>
-						</div>
-						<button class="au-btn tp-resizeme" data-fontsize="['18', '18', '18', '18', '18']">Book
-							now</button>
-					</div>
-				</form>
-			</div>
-		</div>
-
-		<section class="welcome section-primary pt-150 pb-110">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="image-group">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="place-holder-1">
-										<img src="<?=IMG?>welcome-1.jpg" alt>
-									</div>
-								</div>
-								<div class="col-md-6 ml--10">
-									<div class="place-holder-2">
-										<img src="<?=IMG?>welcome-2.jpg" alt>
-									</div>
-									<img src="<?=IMG?>welcome-3.jpg" alt>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="welcome-content">
-							<div class="section-header text-left">
-								<h2>Welcome to <?=APP_TITLE?></h2>
-								<span>~ Luxury & Quality ~</span>
-							</div>
-							<div class="body">
-								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-									voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-									occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
-									mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
-									expedita distinctio. Nam libero tempore.</p>
-								<a href="about-us.html" class="au-btn__readmore">Read More</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="trait">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-6 col-xl-6 px-0 mx-auto">
-						<div class="image-holder">
-							<img src="<?=IMG?>trait.jpg" alt>
-						</div>
-					</div>
-					<div class="col-lg-6 col-xl-6 px-0">
-						<div class="trait-content">
-							<div class="trait-col">
-								<img src="<?=IMG?>serve-icon.png" alt>
-								<h5>Serve</h5>
-								<p>It is a long established fact that a reader will be distracted by the readable
-									content looking.</p>
-							</div>
-							<div class="trait-col mr-0">
-								<img src="<?=IMG?>fresh-food-icon.png" alt>
-								<h5>Fresh Food</h5>
-								<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-									default model.</p>
-							</div>
-							<div class="trait-col mb-md-0">
-								<img src="<?=IMG?>hot-food-icon.png" alt>
-								<h5>Hot Food</h5>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have
-									suffered.</p>
-							</div>
-							<div class="trait-col mb-0 mr-0">
-								<img src="<?=IMG?>coffee-icon.png" alt>
-								<h5>Coffee</h5>
-								<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-									anything.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="our-story">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-6 col-xl-6 px-0 order-2 order-lg-1">
-						<div class="our-story-primary style-1">
-							<div class="inner">
+				<div class="my-flipster">
+					<ul>
+						<li class="flipster-item">
+							<img src="<?=IMG?>flipster-1.jpg" alt class="flipster__image">
+							<div class="content">
 								<div class="heading">
-									<h2>Our Story</h2>
-									<img src="<?=IMG?>border.png" alt>
+									<h3>Our Story</h3>
+									<img src="<?=IMG?>border-1.png" alt>
 								</div>
 								<div class="body">
 									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 										doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-										veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-										voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+										veritatis et quasi architecto beatae vitae dicta sunt .</p>
 									<div class="end">
-										<img src="<?=IMG?>signature.png" alt>
+										<img src="<?=IMG?>signature-1.png" alt>
 										<div class="name">
 											<h6>
 												<a href="#">Harry Price</a>
@@ -258,258 +147,301 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-xl-6 px-0 order-1 order-lg-2">
-						<div class="image-holder">
-							<img src="<?=IMG?>our-story.jpg" alt>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="our-menu bg-none section-primary pb-120">
-			<div class="container">
-				<div class="section-header mb-60">
-					<h2>Our food menu</h2>
-					<span>~ See what we offer ~</span>
-				</div>
-				<div id="tabs">
-					<div class="row menu-navigation">
-						<div class="col-md-10 col-xl-6 mx-auto">
-							<ul>
-								<?php foreach ($cats as $key => $cat): ?>
-									<?php if ($cat['deal'] == 'no'): ?>
-										<li>
-											<a href="#home-cat-<?=$cat['slug']?>" class="active">
-												<img src="<?=UPLOADS.$cat['icon']?>" alt>
-												<span><?=$cat['title']?></span>
-											</a>
-										</li>
-									<?php endif ?>
-								<?php endforeach ?>
-							</ul>
-						</div>
-					</div>
-					<div class="menu-wrapper">
-						<div class="inner">
-							<?php foreach ($cats as $key => $cat): ?>
-								<?php if ($cat['deal'] == 'no'): ?>
-
-									<div class="row" id="home-cat-<?=$cat['slug']?>">
-
-										<?php foreach ($products as $key => $product): ?>
-											<?php if ($product['category_id'] == $cat['category_id']): ?>
-												<div class="col-md-6 menu-holder left-40">
-													<a href="<?=BASEURL.'product/'.$product['slug']?>" class="menu-thumb">
-														<img src="<?=UPLOADS.$product['image']?>" alt>
-													</a>
-													<div class="menu-item">
-														<h5 class="color-fff">
-															<a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
-															<span class="dots"></span>
-															<span class="price">
-																<span><?=CURRENCY?></span>
-																<?=$product['price']?>
-															</span>
-														</h5>
-														<ul>
-															<?php if ($product['small'] > 0): ?>
-																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
-															<?php endif ?>
-															<?php if ($product['medium'] > 0): ?>
-																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/medium'?>">Medium</a></li>
-															<?php endif ?>
-															<?php if ($product['large'] > 0): ?>
-																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/large'?>">Large</a></li>
-															<?php endif ?>
-															<?php if ($product['family'] > 0): ?>
-																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
-															<?php endif ?>
-														</ul>
-													</div>
-												</div><!-- /6 -->
-											<?php endif ?>
-										<?php endforeach ?>
-
-									</div><!-- /row -->
-
-								<?php endif ?>
-							<?php endforeach ?>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="food-slider">
-
-			<div class="owl-carousel owl-theme style" id="food-carousel">
-				<?php foreach ($home_products as $key => $product): ?>
-					<div class="item">
-						<div class="image-holder">
-							<img src="<?=UPLOADS.$product['image']?>" alt="<?=$product['title']?>">
-							<div class="inner">
-								<div class="item-info">
-									<h4>
-										<a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
-									</h4>
-									<div class="star-rating">
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
-										<i class="zmdi zmdi-star"></i>
+						</li>
+						<li class="flipster-item">
+							<img src="<?=IMG?>flipster-2.jpg" alt class="flipster__image">
+							<div class="content">
+								<div class="heading mb-34">
+									<h3>Opening Time</h3>
+								</div>
+								<div class="body">
+									<div class="time">
+										<h4>Monday - Friday</h4>
+										<span>7am - 11am (Breakfast)</span>
+										<span>11am - 10pm (Lunch/Dinner)</span>
 									</div>
-									<span class="price">
-										<span><?=CURRENCY?></span><?=$product['price']?>
-									</span>
+									<div class="time">
+										<h4>Saturday - Sunday</h4>
+										<span>8am - 1pm (Brunch)</span>
+										<span>1am - 10pm (Lunch/Dinner)</span>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				<?php endforeach ?>
+						</li>
+						<li class="flipster-item">
+							<img src="<?=IMG?>flipster-3.jpg" alt class="flipster__image">
+							<div class="content">
+								<div class="heading mb-34">
+									<h3>Reservation</h3>
+								</div>
+								<div class="body">
+									<p class="mb-32">Make your <span class="color-cdaa7c">reservation online</span> any
+										time, day or night! Royate Restaurant looks forward to serving you the best food
+										experience.</p>
+									<p>Or you can also call us <span class="semi-bold">+ (156) 1800-366-6666</span> from
+										7 a.m until before the closing time 1 hour</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 
-		<section class="section-primary pt-133 pb-110">
+		<section class="section-primary our-service pb-120">
 			<div class="container">
 				<div class="section-header">
-					<h2>Latest news</h2>
-					<span>~ Great articles ~</span>
+					<h2 class="text-white">Our Best Service</h2>
+					<span>~ Experiences on food ~</span>
 				</div>
 				<div class="row">
-					<?php foreach ($news as $key => $post): ?>
-						<?php if ($key == 3): ?>
-							<?php break; ?>
-						<?php endif ?>
-					<div class="col-md-6 col-lg-4">
-						<div class="post">
-							<div class="post-thumb">
-								<a href="<?=BASEURL.'post/'.$post['slug']?>">
-									<img src="<?=UPLOADS.$post['image']?>" alt="<?=$post['title']?>">
-								</a>
-								<div class="post-date">
-									<div class="inner">
-										<span class="date"><?=date('d',strtotime($post['updated_at']))?></span>
-										<span class="month"><?=date('M',strtotime($post['updated_at']))?></span>
-									</div>
-								</div>
-							</div>
-							<div class="post-body has-border bg-1">
-								<h5>
-									<a href="<?=BASEURL.'post/'.$post['slug']?>">
-										<?=$post['title']?>
-									</a>
-								</h5>
-								<p><?=$post['short']?></p>
-								<a href="<?=BASEURL.'post/'.$post['slug']?>" class="au-btn__readmore">Read More</a>
-							</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="our-service-col">
+							<h3>- Serve -</h3>
+							<img src="<?=IMG?>serve-white-icon.png" alt>
+							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+								ut et voluptates repudiandae.</p>
 						</div>
 					</div>
-					<?php endforeach ?>
+					<div class="col-md-6 col-lg-3">
+						<div class="our-service-col">
+							<h3>- Fresh food -</h3>
+							<img src="<?=IMG?>fresh-food-white-icon.png" alt>
+							<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising
+								pain was born.</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="our-service-col mb-md-0">
+							<h3>- Hot food -</h3>
+							<img src="<?=IMG?>hot-food-white-icon.png" alt>
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+								laudantium, totam rem.</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="our-service-col mb-0">
+							<h3>- Coffee -</h3>
+							<img src="<?=IMG?>coffee-white-icon.png" alt>
+							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+								consequatur.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="instagram">
+		<section class="section-primary pb-120">
+			<div class="container">
+				<div class="section-header">
+					<h2>Our Food Menu</h2>
+					<span>~ See what we offer ~</span>
+				</div>
+				<div class="our-menu-alternate">
+
+					<?php foreach ($cats as $key => $cat): ?>
+						<?php if ($cat['deal'] == 'no'): ?>
+							<?php
+							if($key%2==0){
+								$classStyle = 'style-2';
+							}
+							else{
+								$classStyle = 'style-1';
+							}
+							?>
+							<div class="our-menu-block <?=$classStyle?>">
+
+								<img src="<?=UPLOADS.$cat['image']?>" alt="<?=$cat['title']?>">
+
+								<div class="our-menu-col">
+									<div class="heading">
+										<h3 class="bold-color"><?=$cat['title']?></h3>
+										<span class="icon">
+											<img src="<?=UPLOADS.$cat['icon']?>" alt="<?=$cat['title']?>">
+										</span>
+									</div>
+									<div class="body">
+										<?php foreach ($products as $key => $product): ?>
+											<?php if ($product['category_id'] == $cat['category_id']): ?>
+												<div class="menu-item">
+													<h5 class="bold-color">
+														<a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
+														<span class="dots"></span>
+														<span class="price">
+															<span><?=CURRENCY?></span>
+															<?=$product['price']?>
+														</span>
+													</h5>
+													<ul>
+														<?php if ($product['small'] > 0): ?>
+															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
+														<?php endif ?>
+														<?php if ($product['medium'] > 0): ?>
+															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/medium'?>">Medium</a></li>
+														<?php endif ?>
+														<?php if ($product['large'] > 0): ?>
+															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/large'?>">Large</a></li>
+														<?php endif ?>
+														<?php if ($product['family'] > 0): ?>
+															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
+														<?php endif ?>
+													</ul>
+												</div>
+											<?php endif ?>
+										<?php endforeach ?>
+										<a href="<?=BASEURL.'category/'.$cat['slug']?>" class="au-btn__readmore">View more</a>
+									</div>
+								</div>
+							</div><!-- /our-menu-block -->
+						<?php endif ?>
+					<?php endforeach ?>
+					
+				</div>
+			</div>
+		</section>
+
+		<section class="booking">
 			<div class="container-fluid">
-				<h4>Follow instagram</h4>
 				<div class="row">
-					<div class="col-6 col-md-4 col-lg-2 px-0">
-						<a href="#" class="image-holder">
-							<img src="<?=IMG?>instagram-1.jpg" alt>
-							<div class="overlay">
-								<div class="love">
-									<span class="lnr lnr-heart"></span>
-									20
-								</div>
-								<div class="comment">
-									<span class="lnr lnr-bubble"></span>
-									15
-								</div>
-							</div>
-						</a>
+					<div class="col-md-6 px-0">
+						<div class="image-holder"></div>
 					</div>
-					<div class="col-6 col-md-4 col-lg-2 px-0">
-						<a href="#" class="image-holder">
-							<img src="<?=IMG?>instagram-2.jpg" alt>
-							<div class="overlay">
-								<div class="love">
-									<span class="lnr lnr-heart"></span>
-									10
-								</div>
-								<div class="comment">
-									<span class="lnr lnr-bubble"></span>
-									20
-								</div>
+					<div class="col-md-6 px-0">
+						<div class="booking-content">
+							<div class="section-header">
+								<h2 class="text-white">Book a table</h2>
+								<span>~ Check out our place ~</span>
 							</div>
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 px-0">
-						<a href="#" class="image-holder">
-							<img src="<?=IMG?>instagram-3.jpg" alt>
-							<div class="overlay">
-								<div class="love">
-									<span class="lnr lnr-heart"></span>
-									25
+							<form method="get">
+								<div class="form-row fix-lg">
+									<div class="form-col">
+										<div class="select">
+											<div class="form-holder">
+												<div class="form-control">1 people</div>
+												<span class="lnr lnr-chevron-down"></span>
+											</div>
+											<ul class="dropdown">
+												<li data-value="1 people">1 people</li>
+												<li data-value="2 people">2 people</li>
+												<li data-value="3 people">3 people</li>
+												<li data-value="4 people">4 people</li>
+												<li data-value="5 people">5 people</li>
+												<li data-value="6 people">6 people</li>
+												<li data-value="7 people">7 people</li>
+												<li data-value="8 people">8 people</li>
+												<li data-value="9 people">9 people</li>
+												<li data-value="10 people">10 people</li>
+											</ul>
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="form-holder">
+											<input type="text" class="form-control datepicker-here" data-language="en"
+												data-date-format="dd - mm - yyyy" placeholder="Date">
+											<span class="lnr lnr-calendar-full big"></span>
+										</div>
+									</div>
 								</div>
-								<div class="comment">
-									<span class="lnr lnr-bubble"></span>
-									11
+								<div class="form-row">
+									<div class="form-col">
+										<div class="form-holder">
+											<input type="text" class="form-control time-picker" placeholder="Time">
+											<span class="lnr lnr-clock big"></span>
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="form-holder">
+											<input type="text" class="form-control" placeholder="Name">
+										</div>
+									</div>
 								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 px-0">
-						<a href="#" class="image-holder">
-							<img src="<?=IMG?>instagram-4.jpg" alt>
-							<div class="overlay">
-								<div class="love">
-									<span class="lnr lnr-heart"></span>
-									13
+								<div class="form-row">
+									<div class="form-col">
+										<div class="form-holder">
+											<input type="text" class="form-control" placeholder="Phone">
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="form-holder">
+											<input type="text" class="form-control" placeholder="Email">
+										</div>
+									</div>
 								</div>
-								<div class="comment">
-									<span class="lnr lnr-bubble"></span>
-									22
+								<div class="btn-holder">
+									<button class="au-btn has-bg au-btn--hover round">Book now</button>
 								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 px-0">
-						<a href="#" class="image-holder">
-							<img src="<?=IMG?>instagram-5.jpg" alt>
-							<div class="overlay">
-								<div class="love">
-									<span class="lnr lnr-heart"></span>
-									24
-								</div>
-								<div class="comment">
-									<span class="lnr lnr-bubble"></span>
-									15
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-2 px-0">
-						<a href="#" class="image-holder">
-							<img src="<?=IMG?>instagram-6.jpg" alt>
-							<div class="overlay">
-								<div class="love">
-									<span class="lnr lnr-heart"></span>
-									20
-								</div>
-								<div class="comment">
-									<span class="lnr lnr-bubble"></span>
-									21
-								</div>
-							</div>
-						</a>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<section class="section-primary event pb-120">
+			<div class="container">
+				<div class="section-header">
+					<h2>Upcoming events</h2>
+					<span>~ Come and wait with us ~</span>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="event-col set-bg" data-image-src="<?=IMG?>event-bg-1.jpg">
+							<div class="interior">
+								<div class="event-date">
+									<div class="inner">
+										<span class="date">20</span>
+										<span class="month">June</span>
+									</div>
+								</div>
+								<h6>
+									<a href="#">Nor again is there anyone</a>
+								</h6>
+								<div class="event-meta">
+									<div class="event-time">
+										<span class="lnr lnr-clock"></span>
+										8am - 5pm
+									</div>
+									<div class="event-address">
+										<span class="lnr lnr-map-marker"></span>
+										No 40 Baria Sreet 133/2
+									</div>
+								</div>
+								<p> Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
+									soluta nobis est.</p>
+								<a href="#" class="au-btn__readmore color-36">Read more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="event-col mb-0 set-bg" data-image-src="<?=IMG?>event-bg-2.jpg">
+							<div class="interior">
+								<div class="event-date">
+									<div class="inner">
+										<span class="date">22</span>
+										<span class="month">June</span>
+									</div>
+								</div>
+								<h6>
+									<a href="#">Excepteur sint occaecat cupidatat</a>
+								</h6>
+								<div class="event-meta">
+									<div class="event-time">
+										<span class="lnr lnr-clock"></span>
+										10am - 5pm
+									</div>
+									<div class="event-address">
+										<span class="lnr lnr-map-marker"></span>
+										No 40 Baria Sreet 133/2
+									</div>
+								</div>
+								<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+									maiores alias consequatur.</p>
+								<a href="#" class="au-btn__readmore color-36">Read more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 	</main>
-	

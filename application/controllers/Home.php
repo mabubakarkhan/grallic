@@ -80,6 +80,27 @@ class Home extends CI_Controller {
 		$data['news'] = $this->model->blog();
 		$this->template('index',$data);
 	}
+	public function index2()
+	{
+		$data['home_page_nav'] = 'current';
+		$data['page'] = $this->model->get_page_byid(1);
+		$data['meta_title'] = $data['page']['meta_title'];
+		$data['meta_key'] = $data['page']['meta_key'];
+		$data['meta_desc'] = $data['page']['meta_desc'];
+		$data['open_graph'] = $data['page']['open_graph'];
+		$data['home_page'] = true;
+		$data['deal_products'] = $this->model->get_deal_products();
+		$data['products'] = $this->model->get_non_deal_products();
+		$data['home_products'] = $this->model->get_home_products();
+		$data['slider'] = $this->model->get_results("
+			SELECT s.*, p.title AS product, p.slug AS product_slug 
+			FROM `slider` AS s 
+			LEFT JOIN `product` AS p ON s.product_id = p.product_id 
+			WHERE s.platform = 'website'
+		;");
+		$data['news'] = $this->model->blog();
+		$this->template('index2',$data);
+	}
 	public function about_us()
 	{
 		$data['page'] = $this->model->get_page_byid(2);
