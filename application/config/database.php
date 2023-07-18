@@ -83,7 +83,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 else
 {
 	define('_DB_USER', "cubixtechnologyc_grallic");
-	define('_DB_PASS', "#7lT)eBzzkIyf");
+	define('_DB_PASS', "7lT)eBzzkIyf");
 	define('_DB_NAME', "cubixtechnologyc_grallic");
 	define('_DB_HOST', "localhost");
 }
