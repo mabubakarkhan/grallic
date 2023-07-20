@@ -46,6 +46,9 @@ $route["index"] = 'Home/index';
 $route["index2"] = 'Home/index2';
 $route["about-us"] = 'Home/about_us';
 $route["contact-us"] = 'Home/contact_us';
+$route["events"] = 'Home/events';
+$route["reservation"] = 'Home/reservation';
+$route["post-reservation"] = 'Home/post_reservation';
 
 $route["category/(.*)"] = 'Home/category/$1';
 $route["product/(.*)"] = 'Home/product/$1';

@@ -1,8 +1,8 @@
 <script type="text/javascript">
     function del_q(id) {
-        cnfr = confirm("Are you sure you want to delete this Event");
+        cnfr = confirm("Are you sure you want to delete this Service Box");
         if (cnfr) {
-            document.location = "<?=BASEURL?>admin/delete-blog/?id=" + id;
+            document.location = "<?=BASEURL?>admin/delete-service-box/?id=" + id;
         }
     }
 </script>
@@ -14,9 +14,9 @@
             <li><?=$page_title?></li>
         </ol>
         <div class="page-header-actions">
-            <a class="btn btn-sm btn-success btn-round" href='<?=BASEURL."admin/add-blog"?>'>
+            <a class="btn btn-sm btn-success btn-round" href='<?=BASEURL."admin/add-service-box"?>'>
                 <i class="icon md-plus" aria-hidden="true"></i>
-                <span class="hidden-xs">Add Event</span>
+                <span class="hidden-xs">Add Service Box</span>
             </a>
 
             <a class="btn btn-sm btn-primary btn-round" href="<?=BASEURL?>" target="_blank">
@@ -42,7 +42,6 @@
                 <table class="table table-bordered table-hover dataTable table-striped width-full" data-plugin="dataTable">
                     <thead>
                         <tr>
-                            <th>at</th>
                             <th>Title</th>
                             <th>Detail</th>
                             <th>Action</th>
@@ -50,7 +49,6 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>at</th>
                             <th>Title</th>
                             <th>Detail</th>
                             <th>Action</th>
@@ -58,15 +56,14 @@
                     </tfoot>
                     <tbody>
                         <?php
-                        if (count($blog) > 0) {
-                            foreach ($blog as $q): ?>
+                        if (count($service_boxs) > 0) {
+                            foreach ($service_boxs as $q): ?>
                                 <tr>
-                                    <td><?=$q['at']?></td>
                                     <td><?=$q['title']?></td>
                                     <td><?=$q['detail']?></td>
                                     <td class="actions">
-                                        <a href="javascript:del_q('<?=$q['blog_id']?>')" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"><i class="icon md-delete" aria-hidden="true"></i></a>
-                                        <a href="<?=BASEURL.'admin/edit-blog?id='.$q['blog_id'].'/'?>" class="btn btn-sm btn-icon btn-pure btn-default on-default edit-row"><i class="icon md-edit" aria-hidden="true"></i></a>
+                                        <a href="javascript:del_q('<?=$q['service_box_id']?>')" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"><i class="icon md-delete" aria-hidden="true"></i></a>
+                                        <a href="<?=BASEURL.'admin/edit-service-box?id='.$q['service_box_id'].'/'?>" class="btn btn-sm btn-icon btn-pure btn-default on-default edit-row"><i class="icon md-edit" aria-hidden="true"></i></a>
                                     </td>
                                 </tr>
                                 <?php endforeach;
@@ -75,9 +72,8 @@
                             ?>
                             <tr>
                                 <td>
-                                    No News found.
+                                    No Service Box found.
                                 </td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>

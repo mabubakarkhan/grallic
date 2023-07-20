@@ -14,12 +14,16 @@
 
 	<link rel="stylesheet" href="<?=FONTS?>material-design-iconic-font/css/material-design-iconic-font.min.css">
 
+	<link rel="stylesheet" href="<?=FONTS?>font-awesome-5/css/fontawesome-all.min.css">
+
 	<link rel="stylesheet" href="<?=VENDOR?>bootstrap/bootstrap.min.css">
 
 	<link rel="stylesheet" href="<?=VENDOR?>owl-carousel/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="<?=VENDOR?>owl-carousel/css/owl.theme.default.min.css">
 
 	<link rel="stylesheet" href="<?=CSS?>animate.css">
+
+	<link rel="stylesheet" href="<?=VENDOR?>date-picker/datepicker.min.css">
 
 	<link rel="stylesheet" type="text/css" href="<?=VENDOR?>revolution-slider/css/layers.css">
 	<link rel="stylesheet" type="text/css" href="<?=VENDOR?>revolution-slider/css/navigation.css">
@@ -28,6 +32,8 @@
 	<link rel="stylesheet" href="<?=VENDOR?>flipster/jquery.flipster.min.css">
 
 	<link rel="stylesheet" href="<?=VENDOR?>hcmobilenav/demo.css">
+
+	<link rel="stylesheet" href="<?=VENDOR?>jquery-timepicker-master/jquery.timepicker.css">
 
 	<link rel="shortcut icon" href="favicon.png">
 
@@ -91,26 +97,14 @@
 						</div>
 					</div>
 				</li>
-				<li class="has-children">
-					<a href="#">
+				<li class="<?=$reservation_nav?>">
+					<a href="<?=BASEURL.'reservation'?>">
 						Reservation
 					</a>
-					<div class="sub-menu">
-						<div class="wrapper">
-							<ul>
-								<li>
-									<a href="reservation_v1.html">Reservation_v1</a>
-								</li>
-								<li>
-									<a href="reservation_v2.html">Reservation_v2</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 				</li>
-				<li>
-					<a href="#">
-						Blog
+				<li class="<?=$events_nav?>">
+					<a href="<?=BASEURL.'events'?>">
+						Events
 					</a>
 				</li>
 			</ul>
@@ -301,26 +295,14 @@
 							<?php endforeach ?>
 						</ul>
 					</li>
-					<li>
-						<a href="#">
+					<li class="<?=$reservation_nav?>">
+						<a href="<?=BASEURL.'reservation'?>">
 							Reservation
 						</a>
-						<div class="sub-menu">
-							<div class="wrapper">
-								<ul>
-									<li>
-										<a href="reservation_v1.html">Reservation_v1</a>
-									</li>
-									<li>
-										<a href="reservation_v2.html">Reservation_v2</a>
-									</li>
-								</ul>
-							</div>
-						</div>
 					</li>
-					<li>
-						<a href="#">
-							Blog
+					<li class="<?=$events_nav?>">
+						<a href="<?=BASEURL.'events'?>">
+							Events
 						</a>
 					</li>
 				</ul>
@@ -348,7 +330,7 @@
 			<a href="index-2.html">
 				<img src="<?=IMG?>logo-menu-sidebar.png" alt>
 			</a>
-			<p class="text">Et harum quidem rerum facilis est et expedita distinctio nam libero.</p>
+			<p class="text"><?=$setting['about']?></p>
 			<div class="owl-carousel owl-theme sidebar-custom-images image-slider style-1" id="image-carousel">
 				<?php foreach ($home_products as $key => $product): ?>
 					<div class="item">

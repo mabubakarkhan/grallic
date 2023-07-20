@@ -238,6 +238,14 @@ class Model_functions extends CI_Model {
 	{
 		return $this->get_row("SELECT * FROM `blog` WHERE `slug` = '$slug';");
 	}
+	public function service_boxs()
+	{
+		return $this->get_results("SELECT * FROM `service_box` ORDER BY `updated_at` DESC;");
+	}
+	public function get_service_box_byid($id)
+	{
+		return $this->get_row("SELECT * FROM `service_box` WHERE `service_box_id` = '$id';");
+	}
 	/* SEO Tags */
 	public function seo_tags()
 	{

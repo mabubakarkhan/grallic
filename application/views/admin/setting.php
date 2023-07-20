@@ -62,6 +62,15 @@
 
 					<div class="col-lg-12 form-horizontal">
 						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">About</label>
+							<div class=" col-lg-12 col-sm-9">
+								<textarea name="about" class="form-control" row="2"><?=$q['about']?></textarea>
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-12 form-horizontal">
+						<div class="form-group form-material">
 							<label class="col-lg-12 col-sm-3 control-label">Facebook
 								<span class="required">*</span>
 							</label>

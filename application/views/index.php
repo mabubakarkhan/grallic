@@ -1,122 +1,38 @@
 <main>
 
 		<div class="rev_slider_wrapper">
-			<div id="rev_slider_3" class="rev_slider" data-version="5.4.5">
+			<div id="rev_slider_4" class="rev_slider" data-version="5.4.5">
 				<ul>
-					<?php foreach ($slider as $key => $s): ?>
-						<li data-transition>
-							<img src="<?=UPLOADS.$s['img']?>" class="rev-slidebg" alt>
-							<div class="tp-caption tp-resizeme caption-1"
-								data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-fontsize="['33', '33', '33', '33', '33']"
-								data-voffset="['-164','-110', '-96', '-140', '-150']"
-								data-hoffset="['-127','-127', '-120', '-127', '-127']" data-lineheight="inherit"
-								data-color="#fff">
-								Since
-							</div>
-							<div class="tp-caption tp-resizeme caption-2"
-								data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-voffset="['-165', '-111', '-97', '-141', '-151']"
-								data-width="['auto']" data-height="['auto']" data-type="image">
-								<img src="<?=IMG?>crown-symbol.png" alt
-									data-ww="['103px', '103px', '103px', '103px', '103px']"
-									data-hh="['80px', '80px', '80px', '80px', '80px']">
-							</div>
-							<div class="tp-caption tp-resizeme caption-3"
-								data-frames="[{&quot;delay&quot;:2000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-fontsize="['33', '33', '33', '33', '33']"
-								data-voffset="['-164','-110', '-96', '-140', '-150']"
-								data-hoffset="['120','120', '110', '120', '120']" data-lineheight="inherit"
-								data-color="#fff">
-								1986
-							</div>
-							<div class="tp-caption tp-resizeme caption-4"
-								data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-fontsize="['67', '67', '67', '67', '67']"
-								data-voffset="['-42','12', '26', '-18', '-28']" data-lineheight="inherit" data-color="#fff">
-								<a href="<?=BASEURL.'product/'.$s['product_slug']?>" class="text-white"><?=$s['product']?></a>
-							</div>
-							<div class="tp-caption tp-resizeme caption-5"
-								data-frames="[{&quot;delay&quot;:3000,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:{-250,250};y:{-150,150};rX:{-90,90};rY:{-90,90};rZ:{-360,360};sX:0;sY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-fontsize="['27', '27', '27', '27', '45']"
-								data-voffset="['54','108', '122', '78', '68']" data-lineheight="inherit"
-								data-color="#ffcc66">
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-							</div>
-							<div class="tp-caption tp-resizeme caption-6"
-								data-frames="[{&quot;delay&quot;:3200,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-voffset="['98', '152', '166', '122', '112']"
-								data-width="['auto']" data-height="['auto']" data-type="image">
-								<img src="<?=IMG?>assure-food-quality.png" alt
-									data-ww="['300px', '300px', '300px', '300px', '300px']"
-									data-hh="['45px', '45px', '45px', '45px', '45px']">
-							</div>
-							<div class="tp-caption tp-resizeme caption-form"
-								data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="bottom" data-voffset="['143','93', '73', '78', '73']"
-								data-lineheight="inherit" data-width="['991', '991', '891', '991', '991']"
-								data-visibility="[&quot;on&quot;, &quot;off&quot;, &quot;off&quot;, &quot;off&quot;, &quot;off&quot;]">
-
-								<div class="slideshow-form">
-									<form method="get">
-										<div class="inner">
-											<div class="form-holder">
-												<select class="form-control">
-													<option value="1 people">1 people</option>
-													<option value="2 people">2 people</option>
-													<option value="3 people">3 people</option>
-													<option value="4 people">4 people</option>
-													<option value="5 people">5 people</option>
-												</select>
-												<span class="lnr lnr-chevron-down"></span>
-											</div>
-											<div class="form-holder">
-												<input type="text" class="form-control datepicker-here" data-language="en"
-													data-date-format="dd - mm - yyyy" placeholder="Date">
-												<span class="lnr lnr-calendar-full big"></span>
-											</div>
-											<div class="form-holder">
-												<input type="text" class="form-control time-picker" placeholder="Time">
-												<span class="lnr lnr-clock big"></span>
-											</div>
-											<button class="au-btn tp-resizeme"
-												data-fontsize="['18', '18', '18', '18', '18']">Book now</button>
-										</div>
-									</form>
-								</div>
-							</div>
-							<div class="tp-caption tp-resizeme caption-pointer"
-								data-frames="[{&quot;delay&quot;:0,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="left" data-y="middle" data-fontsize="['25', '25', '25', '30', '50']"
-								data-hoffset="['80','40', '40', '40', '20']" data-lineheight="inherit" data-color="#fff"
-								data-visibility="[&quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;off&quot;]"
-								data-actions="[{
-									&quot;event&quot;: &quot;click&quot;, 
-									&quot;action&quot;: &quot;jumptoslide&quot;, 
-									&quot;slide&quot;: &quot;previous&quot;, 
-									&quot;delay&quot;: &quot;0&quot;
-								}]">
-								<span class="lnr lnr-arrow-left"></span>
-							</div>
-							<div class="tp-caption tp-resizeme caption-pointer"
-								data-frames="[{&quot;delay&quot;:0,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="right" data-y="middle" data-fontsize="['25', '25', '25', '30', '50']"
-								data-hoffset="['80','40', '40', '40', '20']" data-lineheight="inherit" data-color="#fff"
-								data-visibility="[&quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;off&quot;]"
-								data-actions="[{
-									&quot;event&quot;: &quot;click&quot;, 
-									&quot;action&quot;: &quot;jumptoslide&quot;, 
-									&quot;slide&quot;: &quot;next&quot;, 
-									&quot;delay&quot;: &quot;0&quot;
-								}]">
-								<span class="lnr lnr-arrow-right"></span>
-							</div>
-						</li>
-					<?php endforeach ?>
+					<li data-transition>
+						<img src="<?=IMG?>slideshow-5.jpg" class="rev-slidebg" alt>
+						<div class="tp-caption tp-resizeme caption-1"
+							data-frames="[{&quot;delay&quot;:500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:-20px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+							data-x="center" data-y="middle" data-fontsize="['22', '22', '22', '22', '22']"
+							data-voffset="['-64','-77', '-72', '-113', '-113']" data-lineheight="inherit"
+							data-color="#ccc">
+							Because you deserve to enjoy the best
+						</div>
+						<div class="tp-caption tp-resizeme caption-2"
+							data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:-20px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+							data-x="center" data-y="middle" data-fontsize="['99', '99', '99', '99', '99']"
+							data-voffset="['16','3', '8', '-33', '-33']" data-lineheight="inherit" data-color="#fff">
+							nice dinner
+						</div>
+						<div class="tp-caption tp-resizeme caption-3"
+							data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:20px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+							data-x="center" data-y="middle" data-voffset="['142','129', '134', '93', '93']"
+							data-width="['auto']" data-height="['auto']" data-type="image">
+							<img src="<?=IMG?>cuisine-1956.png" alt
+								data-ww="['320px', '320px', '320px', '320px', '320px']"
+								data-hh="['59px', '59px', '59px', '59px', '59px']">
+						</div>
+						<div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
+							data-videowidth="100%" data-videoheight="100%" data-ytid="MHG3n_-Y33A" data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&
+     						origin=http://www.youtube.com/" data-videopreload="auto" data-videorate="1" data-forcecover="1"
+							data-videoloop="loopandnoslidestop" data-aspectratio="16:9" data-videostartat="00:04"
+							data-videoendat="02:08" data-autoplay="on" data-autoplayonlyfirsttime="true">
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -195,38 +111,15 @@
 					<span>~ Experiences on food ~</span>
 				</div>
 				<div class="row">
-					<div class="col-md-6 col-lg-3">
-						<div class="our-service-col">
-							<h3>- Serve -</h3>
-							<img src="<?=IMG?>serve-white-icon.png" alt>
-							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-								ut et voluptates repudiandae.</p>
+					<?php foreach ($service_boxs as $key => $sb): ?>
+						<div class="col-md-6 col-lg-3">
+							<div class="our-service-col">
+								<h3>- <?=$sb['title']?> -</h3>
+								<img src="<?=UPLOADS.$sb['icon']?>" alt="<?=$sb['title']?>">
+								<p><?=$sb['detail']?></p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-6 col-lg-3">
-						<div class="our-service-col">
-							<h3>- Fresh food -</h3>
-							<img src="<?=IMG?>fresh-food-white-icon.png" alt>
-							<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising
-								pain was born.</p>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3">
-						<div class="our-service-col mb-md-0">
-							<h3>- Hot food -</h3>
-							<img src="<?=IMG?>hot-food-white-icon.png" alt>
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium, totam rem.</p>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-3">
-						<div class="our-service-col mb-0">
-							<h3>- Coffee -</h3>
-							<img src="<?=IMG?>coffee-white-icon.png" alt>
-							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-								consequatur.</p>
-						</div>
-					</div>
+					<?php endforeach ?>
 				</div>
 			</div>
 		</section>
@@ -312,32 +205,30 @@
 								<h2 class="text-white">Book a table</h2>
 								<span>~ Check out our place ~</span>
 							</div>
-							<form method="get">
+							<form id="reservation-form">
 								<div class="form-row fix-lg">
 									<div class="form-col">
-										<div class="select">
-											<div class="form-holder">
-												<div class="form-control">1 people</div>
-												<span class="lnr lnr-chevron-down"></span>
-											</div>
-											<ul class="dropdown">
-												<li data-value="1 people">1 people</li>
-												<li data-value="2 people">2 people</li>
-												<li data-value="3 people">3 people</li>
-												<li data-value="4 people">4 people</li>
-												<li data-value="5 people">5 people</li>
-												<li data-value="6 people">6 people</li>
-												<li data-value="7 people">7 people</li>
-												<li data-value="8 people">8 people</li>
-												<li data-value="9 people">9 people</li>
-												<li data-value="10 people">10 people</li>
-											</ul>
+										<div class="form-holder">
+											<select name="people" class="form-control" required data-language="en">
+												<option value="1 people" selected>1 people</option>
+												<option value="2 people">2 people</option>
+												<option value="3 people">3 people</option>
+												<option value="4 people">4 people</option>
+												<option value="5 people">5 people</option>
+												<option value="6 people">6 people</option>
+												<option value="7 people">7 people</option>
+												<option value="8 people">8 people</option>
+												<option value="9 people">9 people</option>
+												<option value="10 people">10 people</option>
+												<option value="10 people+">10 people+</option>
+											</select>
+											<span class="lnr lnr-chevron-down"></span>
 										</div>
 									</div>
 									<div class="form-col">
 										<div class="form-holder">
 											<input type="text" class="form-control datepicker-here" data-language="en"
-												data-date-format="dd - mm - yyyy" placeholder="Date">
+												data-date-format="dd - mm - yyyy" placeholder="Date" name="date_at" required>
 											<span class="lnr lnr-calendar-full big"></span>
 										</div>
 									</div>
@@ -345,30 +236,30 @@
 								<div class="form-row">
 									<div class="form-col">
 										<div class="form-holder">
-											<input type="text" class="form-control time-picker" placeholder="Time">
+											<input type="text" class="form-control time-picker" placeholder="Time" name="time_at" required>
 											<span class="lnr lnr-clock big"></span>
 										</div>
 									</div>
 									<div class="form-col">
 										<div class="form-holder">
-											<input type="text" class="form-control" placeholder="Name">
+											<input type="text" class="form-control" placeholder="Name" name="name" required>
 										</div>
 									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-col">
 										<div class="form-holder">
-											<input type="text" class="form-control" placeholder="Phone">
+											<input type="text" class="form-control" placeholder="Phone" name="phone" required>
 										</div>
 									</div>
 									<div class="form-col">
 										<div class="form-holder">
-											<input type="text" class="form-control" placeholder="Email">
+											<input type="text" class="form-control" placeholder="Email" name="email" required>
 										</div>
 									</div>
 								</div>
 								<div class="btn-holder">
-									<button class="au-btn has-bg au-btn--hover round">Book now</button>
+									<button class="au-btn has-bg au-btn--hover round" type="submit">Book now</button>
 								</div>
 							</form>
 						</div>
@@ -384,62 +275,38 @@
 					<span>~ Come and wait with us ~</span>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						<div class="event-col set-bg" data-image-src="<?=IMG?>event-bg-1.jpg">
-							<div class="interior">
-								<div class="event-date">
-									<div class="inner">
-										<span class="date">20</span>
-										<span class="month">June</span>
+					<?php foreach ($events as $key => $event): ?>
+						<?php if ($key == 2): ?>
+							<?php break; ?>
+						<?php endif ?>
+						<div class="col-md-6">
+							<div class="event-col set-bg" data-image-src="<?=IMG?>event-bg-1.jpg">
+								<div class="interior">
+									<div class="event-date">
+										<div class="inner">
+											<span class="date"><?=date('d',strtotime($event['updated_at']))?></span>
+											<span class="month"><?=date('M',strtotime($event['updated_at']))?></span>
+										</div>
 									</div>
+									<h6>
+										<a href="#"><?=$event['title']?></a>
+									</h6>
+									<div class="event-meta">
+										<div class="event-time">
+											<span class="lnr lnr-clock"></span>
+											<?=$event['time_at']?>
+										</div>
+										<div class="event-address">
+											<span class="lnr lnr-map-marker"></span>
+											<?=$event['location']?>
+										</div>
+									</div>
+									<p><?=$event['detail']?></p>
+									<!-- <a href="#" class="au-btn__readmore color-36">Read more</a> -->
 								</div>
-								<h6>
-									<a href="#">Nor again is there anyone</a>
-								</h6>
-								<div class="event-meta">
-									<div class="event-time">
-										<span class="lnr lnr-clock"></span>
-										8am - 5pm
-									</div>
-									<div class="event-address">
-										<span class="lnr lnr-map-marker"></span>
-										No 40 Baria Sreet 133/2
-									</div>
-								</div>
-								<p> Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-									soluta nobis est.</p>
-								<a href="#" class="au-btn__readmore color-36">Read more</a>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="event-col mb-0 set-bg" data-image-src="<?=IMG?>event-bg-2.jpg">
-							<div class="interior">
-								<div class="event-date">
-									<div class="inner">
-										<span class="date">22</span>
-										<span class="month">June</span>
-									</div>
-								</div>
-								<h6>
-									<a href="#">Excepteur sint occaecat cupidatat</a>
-								</h6>
-								<div class="event-meta">
-									<div class="event-time">
-										<span class="lnr lnr-clock"></span>
-										10am - 5pm
-									</div>
-									<div class="event-address">
-										<span class="lnr lnr-map-marker"></span>
-										No 40 Baria Sreet 133/2
-									</div>
-								</div>
-								<p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
-									maiores alias consequatur.</p>
-								<a href="#" class="au-btn__readmore color-36">Read more</a>
-							</div>
-						</div>
-					</div>
+					<?php endforeach ?>
 				</div>
 			</div>
 		</section>

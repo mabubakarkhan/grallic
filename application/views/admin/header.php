@@ -381,7 +381,13 @@
             <li rel="blog" class="site-menu-item">
                 <a class="animsition-link" href="<?=BASEURL?>admin/blog">
                     <i class="site-menu-icon md-file" aria-hidden="true"></i>
-                    <span class="site-menu-title">Blog</span>
+                    <span class="site-menu-title">Events</span>
+                </a>
+            </li>
+            <li rel="service_boxs" class="site-menu-item">
+                <a class="animsition-link" href="<?=BASEURL?>admin/service_boxs">
+                    <i class="site-menu-icon md-file" aria-hidden="true"></i>
+                    <span class="site-menu-title">Service Boxs</span>
                 </a>
             </li>
             <li rel="setting" class="site-menu-item">

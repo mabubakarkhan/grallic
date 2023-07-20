@@ -63,6 +63,28 @@
 						</div><!-- /form-group -->
 					</div><!-- /form-horizontal -->
 
+					<div class="col-lg-6 form-horizontal">
+						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Timing
+								<span class="required">*</span>
+							</label>
+							<div class=" col-lg-12 col-sm-9">
+								<input type="text" class="form-control" name="time_at" placeholder="Timing" required="" value="<?=$q['time_at']?>">
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-6 form-horizontal">
+						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Location
+								<span class="required">*</span>
+							</label>
+							<div class=" col-lg-12 col-sm-9">
+								<input type="text" class="form-control" name="location" placeholder="Location" required="" value="<?=$q['location']?>">
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
 					<div class="col-lg-12 form-horizontal">
 						<div class="form-group form-material">
 							<label class="col-lg-12 col-sm-3 control-label">Short Description
@@ -80,20 +102,23 @@
 								<span class="required">*</span>
 							</label>
 							<div class=" col-lg-12 col-sm-9">
-								<textarea class="form-control" placeholder="Detail" name="detail" data-plugin="summernote" required="required"><?=$q['detail']?></textarea>
+								<textarea class="form-control" placeholder="Detail" name="detail" required="required"><?=$q['detail']?></textarea>
+								<!-- <textarea class="form-control" placeholder="Detail" name="detail" data-plugin="summernote" required="required"><?=$q['detail']?></textarea> -->
 							</div><!-- /12 -->
 						</div><!-- /form-group -->
 					</div><!-- /12/form-horizontal -->
 
-					<div class="col-lg-12 form-horizontal">
-		                <div class="example-wrap">
-							<h4 class="example-title">Image</h4>
-							<div class="example">
-								<input type="file" id="input-file" data-plugin="dropify" required data-default-file="<?=UPLOADS.$q['image']?>"/>
-								<input type="text" name="image" required value="<?=$q['image']?>" hidden>
-							</div><!-- /example -->
-						</div><!-- /example-wrap -->
-	              	</div><!-- /12/form-horizontal -->
+					<?php if (1==2): ?>
+						<div class="col-lg-12 form-horizontal">
+			                <div class="example-wrap">
+								<h4 class="example-title">Image</h4>
+								<div class="example">
+									<input type="file" id="input-file" data-plugin="dropify" required data-default-file="<?=UPLOADS.$q['image']?>"/>
+									<input type="text" name="image" required value="<?=$q['image']?>" hidden>
+								</div><!-- /example -->
+							</div><!-- /example-wrap -->
+		              	</div><!-- /12/form-horizontal -->
+					<?php endif ?>
 
 					<div class="col-lg-6 form-horizontal">
 						<div class="form-group form-material">

@@ -235,10 +235,19 @@ class Admin extends CI_Controller {
 	{
 		$user = $this->check_login();
 		$data['title'] = "Admin Panel";
-		$data['page_title'] = 'All Posts';
+		$data['page_title'] = 'All Events';
 		$data['menu'] = 'blog';
 		$data['blog'] = $this->model->blog();
 		$this->template('admin/blog', $data);
+	}
+	public function service_boxs()
+	{
+		$user = $this->check_login();
+		$data['title'] = "Admin Panel";
+		$data['page_title'] = 'Service Box';
+		$data['menu'] = 'service_box';
+		$data['service_boxs'] = $this->model->service_boxs();
+		$this->template('admin/service_boxs', $data);
 	}
 	/**
 	*
@@ -299,6 +308,13 @@ class Admin extends CI_Controller {
 		$data['menu'] = 'blog';
 		$this->template('admin/add_blog', $data);
 	}
+	public function add_service_box()
+	{
+		$user = $this->check_login();
+		$data['page_title'] = 'Add Service Box';
+		$data['menu'] = 'blog';
+		$this->template('admin/add_service_box', $data);
+	}
 	/**
 	*
 
@@ -358,6 +374,12 @@ class Admin extends CI_Controller {
 		$user = $this->check_login();
 		$resp = $this->db->insert("blog", $_POST);
 		redirect("admin/blog/?msg=Blog Post Added!");
+	}
+	public function post_service_box()
+	{
+		$user = $this->check_login();
+		$resp = $this->db->insert("service_box", $_POST);
+		redirect("admin/service-boxs/?msg=Service Box Added!");
 	}
 	
 	/**
@@ -502,6 +524,23 @@ class Admin extends CI_Controller {
 			$this->template('admin/add_blog', $data);
 		}
 	}
+	public function edit_service_box()
+	{
+		$user = $this->check_login();
+		$new_id = isset($_GET['id']) ? $_GET['id'] : 0;
+		if($new_id < 1) 
+		{
+			echo ("Wrong Service Box ID has been passed");
+		}
+		else 
+		{
+			$data['q'] = $this->model->get_service_box_byid($new_id);
+			$data['page_title'] = "Edit: Service Box";
+			$data['mode'] = "edit";
+			$data['menu'] = 'service_boxs';
+			$this->template('admin/add_service_box', $data);
+		}
+	}
 	/**
 	*
 
@@ -621,6 +660,23 @@ class Admin extends CI_Controller {
 			redirect("admin/blog/?error=1&msg=Error occured while Editing Blog Post");
 		}
 	}
+	public function update_service_box()
+	{
+		$user = $this->check_login();
+		$aid = $_POST['aid'];
+		unset($_POST['aid'], $_POST['mode'], $_POST['security']);
+		$_POST['updated_at'] = date('Y-m-d H:i:s');
+		$this->db->where("service_box_id",$aid);
+		$data = $this->db->update("service_box", $_POST);
+		if($data)
+		{
+			redirect("admin/service-boxs/?msg=Edited service box Post");
+		}
+		else
+		{
+			redirect("admin/service-boxs/?error=1&msg=Error occured while Editing service box");
+		}
+	}
 	/**
 	*
 
@@ -696,6 +752,20 @@ class Admin extends CI_Controller {
 		else
 		{
 			redirect("admin/blog/?error=1&msg=News has failed to delete. Try Again!");
+		}
+	}
+	public function delete_service_box()
+	{
+		$user = $this->check_login();
+		$this->db->where('service_box_id', $_GET['id']);
+		$resp = $this->db->delete('service_box');
+		if($resp)
+		{
+			redirect("admin/service-boxs/?msg=Service box has Deleted");
+		}
+		else
+		{
+			redirect("admin/service-boxs/?error=1&msg=Service box has failed to delete. Try Again!");
 		}
 	}
 	/**

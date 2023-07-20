@@ -77,7 +77,8 @@ class Home extends CI_Controller {
 			LEFT JOIN `product` AS p ON s.product_id = p.product_id 
 			WHERE s.platform = 'website'
 		;");
-		$data['news'] = $this->model->blog();
+		$data['events'] = $this->model->blog();
+		$data['service_boxs'] = $this->model->service_boxs();
 		$this->template('index',$data);
 	}
 	public function index2()
@@ -100,6 +101,25 @@ class Home extends CI_Controller {
 		;");
 		$data['news'] = $this->model->blog();
 		$this->template('index2',$data);
+	}
+	public function events($value='')
+	{
+		$data['events_nav'] = 'current';
+		$data['meta_title'] = 'Events';
+		$data['meta_key'] = 'Events';
+		$data['meta_desc'] = 'Events';
+		$data['open_graph'] = 'Events';
+		$data['events'] = $this->model->blog();
+		$this->template('events',$data);
+	}
+	public function reservation($value='')
+	{
+		$data['reservation_nav'] = 'current';
+		$data['meta_title'] = 'Reservation';
+		$data['meta_key'] = 'Reservation';
+		$data['meta_desc'] = 'Reservation';
+		$data['open_graph'] = 'Reservation';
+		$this->template('reservation',$data);
 	}
 	public function about_us()
 	{
@@ -635,5 +655,11 @@ class Home extends CI_Controller {
 		else{
 			die('ok kro');
 		}
+	}
+	public function post_reservation()
+	{
+		parse_str($_POST['data'],$post);
+		$this->db->insert('reservation',$post);
+		echo json_encode(array("status"=>true,"msg"=>"request submitted, we'll contact back you soon."));
 	}
 }

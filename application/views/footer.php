@@ -11,8 +11,7 @@
 					<div class="row justify-content-between justify-content-xl-start">
 						<div class="col-md-3  ft-col">
 							<h6>About Us</h6>
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan-tium doloremque
-								laudantium, totam rem aperiam,</p>
+							<p><?=$setting['about']?></p>
 						</div>
 						<div class="col-md-5  col-xl-4 offset-xl-1 ft-col">
 							<h6>Get news & offers</h6>
@@ -88,7 +87,30 @@
 	<script src="<?=VENDOR?>hcmobilenav/hc-mobile-nav.js"></script>
 
 	<script src="<?=VENDOR?>flipster/jquery.flipster.min.js"></script>
+
+	<script src="<?=VENDOR?>jquery-ui/jquery-ui.min.js"></script>
+
+    <script src="<?=VENDOR?>date-picker/datepicker.js"></script>
+    <script src="<?=VENDOR?>date-picker/datepicker.en.js"></script>
+
+    <script src="<?=VENDOR?>jquery-timepicker-master/jquery.timepicker.min.js"></script>
+	
 	<script src="<?=JS?>main.min.js"></script>
+
+
+	<script>
+	$(function(){
+		$(document).on('submit', '#reservation-form', function(event) {
+			event.preventDefault();
+			$form = $(this);
+			$.post('<?=BASEURL."post-reservation"?>', {data: $form.serialize()}, function(resp) {
+				resp = $.parseJSON(resp);
+				alert(resp.msg);
+			});
+		});
+	})
+	</script>
+
 </body>
 
 <!-- Mirrored from freebw.com/templates/royate/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Jul 2023 11:59:28 GMT -->
