@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                 </div><!-- /4 -->
-                            <?php endforeach ?>                            
+                            <?php endforeach ?>
                         </div>
                     </div>
                     

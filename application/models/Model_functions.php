@@ -66,6 +66,16 @@ class Model_functions extends CI_Model {
 	{
 		return $this->get_results("SELECT * FROM `order_item` WHERE `order_id` = '$order' ORDER BY `product` ASC;");
 	}
+	//RESERVATIONs
+	public function reservations($status = 'all')
+	{
+		if ($status == 'all') {
+			return $this->get_results("SELECT * FROM `reservation` ORDER BY `date_at` ASC");
+		}
+		else{
+			return $this->get_results("SELECT * FROM `reservation` WHERE `status` = '$status' ORDER BY `date_at` ASC");
+		}
+	}
 	//CATs
 	public function get_cats($status)
 	{
@@ -130,6 +140,16 @@ class Model_functions extends CI_Model {
 			INNER JOIN `category` AS c ON p.category_id = c.category_id
 			WHERE p.category_id = '$cat' AND p.status = 'active' 
 			ORDER BY p.price ASC;
+		");
+	}
+	public function related_products($id,$cat)
+	{
+		return $this->get_results("
+			SELECT p.*, c.title AS Category 
+			FROM `product` AS p 
+			INNER JOIN `category` AS c ON p.category_id = c.category_id
+			WHERE p.category_id = '$cat' AND p.product_id != '$id' AND p.status = 'active' 
+			ORDER BY rand() LIMIT 4;
 		");
 	}
 	public function get_product_deal_details($product)

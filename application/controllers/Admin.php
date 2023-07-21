@@ -54,6 +54,7 @@ class Admin extends CI_Controller {
 
 	public function process_login()
 	{
+		error_reporting(E_ALL);
 		//$user = $this->check_login();
 		if(!isset($_POST['username']) || $_POST['username'] == "")
 		{
@@ -167,6 +168,15 @@ class Admin extends CI_Controller {
 		else{
 			redirect('orders/new');
 		}
+	}
+	//RESERVATIONs
+	public function reservations($status = 'new')
+	{
+		$user = $this->check_login();
+		$data['page_title'] = $status.' reservations';
+		$data['page_active'] = $status.'_reservations';
+		$data['reservations'] = $this->model->reservations($status);
+		$this->template('admin/reservations',$data);
 	}
 	//CATs
 	public function cats($status = 'all')
@@ -799,7 +809,7 @@ class Admin extends CI_Controller {
 			redirect('logout');
 		}
 	}
-	public function change_cat_status($value='')
+	public function change_cat_status()
 	{
 		$user = $this->check_login();
 		if ($_POST) {
@@ -814,7 +824,7 @@ class Admin extends CI_Controller {
 			}
 		}
 	}
-	public function change_product_status($value='')
+	public function change_product_status()
 	{
 		$user = $this->check_login();
 		if ($_POST) {
@@ -844,7 +854,7 @@ class Admin extends CI_Controller {
 			}
 		}
 	}
-	public function change_addon_status($value='')
+	public function change_addon_status()
 	{
 		$user = $this->check_login();
 		if ($_POST) {
@@ -859,7 +869,22 @@ class Admin extends CI_Controller {
 			}
 		}
 	}
-	public function change_order_status($value='')
+	public function change_reservation_status()
+	{
+		$user = $this->check_login();
+		if ($_POST) {
+			$update['status'] = $_POST['status'];
+			$this->db->where('reservation_id',$_POST['id']);
+			$resp = $this->db->update('reservation',$update);
+			if ($resp) {
+				echo json_encode(array("status"=>true,"msg"=>"changed."));
+			}
+			else{
+				echo json_encode(array("status"=>false,"msg"=>"not changed, please try again or reload your web page."));
+			}
+		}
+	}
+	public function change_order_status()
 	{
 		$user = $this->check_login();
 		if ($_POST) {

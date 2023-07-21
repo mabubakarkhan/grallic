@@ -112,58 +112,44 @@
 			<div class="action align-items-center">
 				<div class="right">
 	                <div class="action">
-	                    <div class="notify">
+	                    <div class="notify cartSection">
 	                        <img src="<?=IMG?>notify.png" alt>
-	                        <span class="notify-amount">0</span>
+	                        <span class="notify-amount cart-count"><?=count($_SESSION['cart'])?></span>
 
 	                        <div id="woocommerce_widget_cart-2" class="widget woocommerce widget_shopping_cart">
 	                            <div class="widget_shopping_cart_content">
-	                                <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-	                                    <li class="woocommerce-mini-cart-item mini_cart_item clearfix">
-	                                        <a href="#" class="remove remove_from_cart_button"
-	                                            aria-label="Remove this item">
-	                                            <span class="lnr lnr-cross-circle"></span>
-	                                        </a>
-	                                        <a href="#" class="image-holder">
-	                                            <img src="<?=IMG?>widget-cart-thumb-1.jpg"
-	                                                class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt>
-	                                            <span class="product-name">Best Brownies</span>
-	                                        </a>
-	                                        <span class="quantity">
-	                                            <span class="woocommerce-Price-amount amount">
-	                                                <span class="woocommerce-Price-currencySymbol">$</span>18
-	                                            </span>
-	                                            x1
-	                                        </span>
-	                                    </li>
-	                                    <li class="woocommerce-mini-cart-item mini_cart_item clearfix">
-	                                        <a href="#" class="remove remove_from_cart_button"
-	                                            aria-label="Remove this item">
-	                                            <span class="lnr lnr-cross-circle"></span>
-	                                        </a>
-	                                        <a href="#" class="image-holder">
-	                                            <img src="<?=IMG?>widget-cart-thumb-2.jpg"
-	                                                class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt>
-	                                            <span class="product-name">Angela's Awesome</span>
-	                                        </a>
-	                                        <span class="quantity">
-	                                            <span class="woocommerce-Price-amount amount">
-	                                                <span class="woocommerce-Price-currencySymbol">$</span>28
-	                                            </span>
-	                                            x3
-	                                        </span>
-	                                    </li>
+	                                <ul class="woocommerce-mini-cart cart_list list-of-items product_list_widget ">
+	                                    <?php foreach ($_SESSION['cart'] as $key => $q): ?>
+		                                    <li class="woocommerce-mini-cart-item mini_cart_item clearfix">
+		                                        <a href="javascript://" data-key="<?=$key?>" class="delete-cart-item remove remove_from_cart_button"
+		                                            aria-label="Remove this item">
+		                                            <span class="lnr lnr-cross-circle"></span>
+		                                        </a>
+		                                        <a href="#" class="image-holder">
+		                                            <img src="<?=UPLOADS.$q['image']?>" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="<?=$q['product']?>">
+		                                            <span class="product-name"><?=$q['product']?></span>
+		                                        </a>
+		                                        <span class="quantity">
+		                                            <span class="woocommerce-Price-amount amount">
+		                                                <span class="woocommerce-Price-currencySymbol"><?=$CURRENCY?></span><?=$q['price_total']?>
+		                                            </span>
+		                                            x<?=$q['qty']?>
+		                                        </span>
+		                                    </li>
+	                                    <?php endforeach ?>
 	                                </ul>
 	                                <p class="woocommerce-mini-cart__total total">
 	                                    <strong>Subtotal:</strong>
 	                                    <span class="woocommerce-Price-amount amount">
-	                                        <span class="woocommerce-Price-currencySymbol">$</span>102
+	                                        <span class="woocommerce-Price-currencySymbol"><?=$CURRENCY?></span>
+	                                        <x class="cart-total"><?=$_SESSION['total']?></x>
 	                                    </span>
 	                                </p>
 	                                <p class="woocommerce-mini-cart__total total">
 	                                    <strong>Total:</strong>
 	                                    <span class="woocommerce-Price-amount amount color-cdaa7c">
-	                                        <span class="woocommerce-Price-currencySymbol">$</span>102
+	                                        <span class="woocommerce-Price-currencySymbol"><?=$CURRENCY?></span>
+	                                        <x class="cart-total"><?=$_SESSION['total']?></x>
 	                                    </span>
 	                                </p>
 	                                <p class="woocommerce-mini-cart__buttons buttons">
@@ -175,7 +161,7 @@
 	                    </div>
 	                </div>
 	            </div>
-				<a href="reservation_v1.html" class="au-btn au-btn--hover has-bd">Booking now</a>
+				<a href="<?=BASEURL.'reservation'?>" class="au-btn au-btn--hover has-bd">Booking now</a>
 				<span class="lnr lnr-menu menu-sidebar-icon"></span>
 			</div>
 		</nav>
@@ -347,13 +333,13 @@
 					<span><?=$setting['address']?></span>
 				</div>
 				<div class="contact-line">
-					<a href="tel:+15618003666666">
+					<a href="tel:<?=$setting['phone']?>">
 						<span class="lnr lnr-phone-handset"></span>
 						<span><?=$setting['phone']?></span>
 					</a>
 				</div>
 				<div class="contact-line">
-					<a href="#">
+					<a href="mailto:<?=$setting['email']?>">
 						<span class="lnr lnr-envelope"></span>
 						<span><span class="__cf_email__"><?=$setting['email']?></span></span>
 					</a>

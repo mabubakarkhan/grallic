@@ -41,3 +41,109 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+.deal-detail{
+    background: #fff;
+    position: relative;
+}
+.deal-detail h2{
+    width: 100%;
+    color: #ed1c24;
+    font-size: 40px;
+    padding: 0 0 16px;
+    margin: 0 0 60px;
+    text-align: center;
+    position: relative;
+    font-family: 'Chocolate Cavalcade', sans-serif;
+}
+.deal-detail .deal-holder{
+    z-index: 9;
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.deal-detail .deal-holder h3{
+    width: 100%;
+    color: #ed1c24;
+    font-size: 26px;
+    margin: 0;
+    position: relative;
+    font-family: 'Chocolate Cavalcade', sans-serif;
+}
+.deal-detail .deal-holder span{
+    display: block;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+}
+.deal-detail .deal-holder .price-holder{
+    color: #000;
+    width: 450px;
+    width: 100%;
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 26px;
+    padding: 10px 20px;
+    align-items: center;
+    background: #ededed;
+    justify-content: space-between;
+}
+.deal-detail .deal-holder .counter{
+    width: 120px;
+    display: flex;
+    justify-content: flex-end;
+}
+.deal-detail .deal-holder .counter a,
+.deal-detail .deal-holder .counter button{
+    width: 36px;
+    color: #fff;
+    height: 36px;
+    display: flex;
+    background: #ed1c24;
+    align-items: center;
+    justify-content: center;
+}
+.deal-detail .deal-holder .quantity-num{
+    border: 0;
+    width: 40px;
+    height: 36px;
+    font-size: 14px;
+    text-align: center;
+     -moz-appearance: textfield;
+}
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.deal-detail .deal-holder select,
+select{
+    width: 100%;
+    height: 48px;
+    margin: 0 0 20px;
+    padding: 5px 15px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0 2px 2px 0;
+    background: #fff url(../images/img15.png) no-repeat 100% 0;
+    background-size: 22px 100%;
+}
+.deal-detail .deal-holder .add-bucket{
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #ed1c24;
+    display: inline-block;
+}
+.deal-detail .deal-holder .add-bucket img{
+    width: 30px;
+    margin: 0 10px 0 0;
+}

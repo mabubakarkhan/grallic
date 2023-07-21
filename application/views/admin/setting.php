@@ -71,6 +71,17 @@
 
 					<div class="col-lg-12 form-horizontal">
 						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Youtube Video ID (slider)
+								<span class="required">*</span>
+							</label>
+							<div class=" col-lg-12 col-sm-9">
+								<input type="text" class="form-control" name="slider_video_id" placeholder="Youtube Video ID (slider)" required="" value="<?=$q['slider_video_id']?>">
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-12 form-horizontal">
+						<div class="form-group form-material">
 							<label class="col-lg-12 col-sm-3 control-label">Facebook
 								<span class="required">*</span>
 							</label>

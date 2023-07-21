@@ -180,6 +180,7 @@ class Home extends CI_Controller {
 			}
 			$data['deals'] = $deal;
 		}
+		$data['products'] = $this->model->related_products($id,$data['product']['category_id']);
 		$data['drinks'] = $this->model->drinks($id);
 		$data['addons'] = $this->model->addon($id);
 		$data['home_page'] = false;
@@ -429,28 +430,15 @@ class Home extends CI_Controller {
 				}
 			}
 
+
+	                                        
 			$html = '';
 			foreach ($_SESSION['cart'] as $key => $q) {
-				$html .= '<div class="deal-box">';
-					$html .= '<a href="javascript://" class="close-box delete-cart-item" data-key="'.$key.'">×</a>';
-					$html .= '<h3>'.$q['product'].'</h3>';
-					if (strlen($q['size']) > 1) {
-						$html .= '<p>'.$q['size'].'</p>';
-					}
-					$html .= '<p>'.$q['detail'].'</p>';
-					if (strlen($q['drink']) > 0) {
-						$html .= '<span>Slect Drink:  '.$q['drink'].' ('.$q['drink_qty'].')</span>';
-					}
-					if (strlen($q['addon']) > 0) {
-						$html .= '<span>Add Ons:  '.$q['addon'].' ('.$q['addon_qty'].')</span>';
-					}
-					$html .= '<strong>PKR '.$q['price_total'].'</strong>';
-					$html .= '<div class="counter" data-key="'.$key.'">';
-						$html .= '<button class="quantity-arrow-minus quantity-arrow-minus-cart"> - </button>';
-						$html .= '<input class="quantity-num quantity-num-cart" type="number" value="'.$q['qty'].'" />';
-						$html .= '<button class="quantity-arrow-plus quantity-arrow-plus-cart"> + </button>';
-					$html .= '</div>';
-				$html .= '</div>';
+				$html .= '<li class="woocommerce-mini-cart-item mini_cart_item clearfix">';
+					$html .= '<a href="javascript://" data-key="'.$key.'" class="delete-cart-item remove remove_from_cart_button" aria-label="Remove this item"><span class="lnr lnr-cross-circle"></span></a>';
+					$html .= '<a href="javascript://" class="image-holder"><img src="'.UPLOADS.$q['image'].'" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt><span class="product-name">'.$q['product'].'</span></a>';
+					$html .= '<span class="quantity"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'.$CURRENCY.'</span>'.$q['price_total'].'</span>x'.$q['qty'].'</span>';
+				$html .= '</li>';
 			}
 			echo json_encode(array("status"=>true,"html"=>$html,"count"=>count($_SESSION['cart']),"total"=>$_SESSION['total']));
 		}

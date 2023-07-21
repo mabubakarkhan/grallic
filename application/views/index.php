@@ -27,7 +27,7 @@
 								data-hh="['59px', '59px', '59px', '59px', '59px']">
 						</div>
 						<div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
-							data-videowidth="100%" data-videoheight="100%" data-ytid="MHG3n_-Y33A" data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&
+							data-videowidth="100%" data-videoheight="100%" data-ytid="<?=$setting['slider_video_id']?>" data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&
      						origin=http://www.youtube.com/" data-videopreload="auto" data-videorate="1" data-forcecover="1"
 							data-videoloop="loopandnoslidestop" data-aspectratio="16:9" data-videostartat="00:04"
 							data-videoendat="02:08" data-autoplay="on" data-autoplayonlyfirsttime="true">

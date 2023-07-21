@@ -255,6 +255,32 @@
               </ul>
             </li>
 
+            <!-- reservations  -->
+              <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                <span class="site-menu-title">Reservations</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li rel="all_reservations" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/reservations/all'?>">
+                    <span class="site-menu-title">All</span>
+                  </a>
+                </li>
+                <li rel="new_reservations" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/reservations/new'?>">
+                    <span class="site-menu-title">New</span>
+                  </a>
+                </li>
+                <li rel="seen_reservations" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/reservations/seen'?>">
+                    <span class="site-menu-title">Seen</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
             <!-- Categories  -->
               <li class="site-menu-item has-sub">
               <a href="javascript:void(0)">
