@@ -58,6 +58,17 @@
 	              		<div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
 								<div class="form-group form-material">
+									<label class="col-lg-12 col-sm-3 control-label">Tag Line <span class="required">*</span></label>
+									<div class=" col-lg-12 col-sm-9">
+										<input type="text" name="tag_line" placeholder="Tag Line" class="form-control" value="<?=$q['tag_line']?>" required>
+									</div><!-- /12 -->
+								</div><!-- /form-group -->
+							</div><!-- /example-wrap -->
+	              		</div><!-- /12/form-horizontal -->
+
+	              		<div class="col-lg-12 form-horizontal">
+		                	<div class="example-wrap">
+								<div class="form-group form-material">
 									<label class="col-lg-12 col-sm-3 control-label">URL Slug <span class="required">*</span></label>
 									<div class=" col-lg-12 col-sm-9">
 										<input type="text" name="slug" placeholder="URL Slug" class="form-control" value="<?=$q['slug']?>" required>

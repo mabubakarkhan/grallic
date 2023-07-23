@@ -42,6 +42,17 @@
 
 					<div class="col-lg-12 form-horizontal">
 						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Whatsapp
+								<span class="required">*</span>
+							</label>
+							<div class=" col-lg-12 col-sm-9">
+								<input type="text" class="form-control" name="Whatsapp" placeholder="Whatsapp" required="" value="<?=$q['whatsapp']?>">
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-12 form-horizontal">
+						<div class="form-group form-material">
 							<label class="col-lg-12 col-sm-3 control-label">Email
 								<span class="required">*</span>
 							</label>
@@ -65,6 +76,15 @@
 							<label class="col-lg-12 col-sm-3 control-label">About</label>
 							<div class=" col-lg-12 col-sm-9">
 								<textarea name="about" class="form-control" row="2"><?=$q['about']?></textarea>
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-12 form-horizontal">
+						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Story</label>
+							<div class=" col-lg-12 col-sm-9">
+								<textarea name="story" class="form-control" row="2"><?=$q['story']?></textarea>
 							</div><!-- /12 -->
 						</div><!-- /form-group -->
 					</div><!-- /form-horizontal -->
@@ -124,6 +144,25 @@
 						</div><!-- /form-group -->
 					</div><!-- /form-horizontal -->
 
+					<div class="col-lg-12 form-horizontal">
+						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Google Map</label>
+							<div class=" col-lg-12 col-sm-9">
+								<textarea name="google_map" class="form-control" row="2"><?=$q['google_map']?></textarea>
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-12 form-horizontal">
+		                <div class="example-wrap">
+							<h4 class="example-title">PDF Menu</h4>
+							<div class="example">
+								<input type="file" id="input-file" data-plugin="dropify" required data-default-file="<?=UPLOADS.$q['pdf']?>"/>
+								<input type="text" name="pdf" required value="<?=$q['pdf']?>" hidden>
+							</div><!-- /example -->
+						</div><!-- /example-wrap -->
+	              	</div><!-- /12/form-horizontal -->
+
 
 	              	<div class="form-group form-material col-lg-12 text-right padding-top-m">
 	                	<button type="submit" class="btn btn-primary" id="validateButton1">Submit</button>
@@ -134,3 +173,34 @@
       </div><!-- /panel -->
     </div>
 </div><!-- /page/animsition -->
+
+<script>
+$(function(){
+	$("#input-file").on('change',function(){
+		var data = new FormData();
+    	data.append('img', $(this).prop('files')[0]);
+    	$(".theatre-cover").fadeIn(300);
+	    $.ajax({
+	        type: 'POST',
+	        processData: false,
+	        contentType: false,
+	        data: data,
+	        url: '<?=BASEURL?>admin/post-pdf-ajax',
+	        dataType : 'json',
+	        success: function(resp){
+	        	$(".theatre-cover").fadeOut(300);
+	       		if (resp.status == true)
+	       		{
+	       			$("#validateButton1").removeAttr('disabled');
+	       			$("#validateButton1").text('Submit');
+	       			$("input[name='pdf']").val(resp.data);
+	       		}
+	       		else
+	       		{
+	       			alert(resp.msg)
+	       		}
+	        }
+	    });
+	})
+})
+</script>

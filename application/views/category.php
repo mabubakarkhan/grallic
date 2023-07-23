@@ -1,6 +1,6 @@
 <main>
 
-        <section class="page-info set-bg" data-image-src="<?=UPLOADS.$cat_['image']?>">
+        <section class="page-info set-bg" data-image-src="<?=IMG.'page-info-bg-5.jpg'?>">
             <div class="section-header">
                 <h1 class="text-white"><?=$cat_['title']?></h1>
                 <span>~ Delicious food ~</span>

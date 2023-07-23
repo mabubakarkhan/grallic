@@ -281,6 +281,32 @@
               </ul>
             </li>
 
+            <!-- contact_forms  -->
+              <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                <span class="site-menu-title">Contact Forms</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li rel="all_contact_forms" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/contact-forms/all'?>">
+                    <span class="site-menu-title">All</span>
+                  </a>
+                </li>
+                <li rel="new_contact_forms" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/contact-forms/new'?>">
+                    <span class="site-menu-title">New</span>
+                  </a>
+                </li>
+                <li rel="seen_contact_forms" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/contact-forms/seen'?>">
+                    <span class="site-menu-title">Seen</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
             <!-- Categories  -->
               <li class="site-menu-item has-sub">
               <a href="javascript:void(0)">
@@ -414,6 +440,12 @@
                 <a class="animsition-link" href="<?=BASEURL?>admin/service_boxs">
                     <i class="site-menu-icon md-file" aria-hidden="true"></i>
                     <span class="site-menu-title">Service Boxs</span>
+                </a>
+            </li>
+            <li rel="gallery" class="site-menu-item">
+                <a class="animsition-link" href="<?=BASEURL?>admin/gallery">
+                    <i class="site-menu-icon md-file" aria-hidden="true"></i>
+                    <span class="site-menu-title">Gallery</span>
                 </a>
             </li>
             <li rel="setting" class="site-menu-item">

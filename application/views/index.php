@@ -49,9 +49,7 @@
 									<img src="<?=IMG?>border-1.png" alt>
 								</div>
 								<div class="body">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-										doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-										veritatis et quasi architecto beatae vitae dicta sunt .</p>
+									<p><?=$setting['story']?></p>
 									<div class="end">
 										<img src="<?=IMG?>signature-1.png" alt>
 										<div class="name">

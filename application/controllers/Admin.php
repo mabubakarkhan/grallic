@@ -178,6 +178,15 @@ class Admin extends CI_Controller {
 		$data['reservations'] = $this->model->reservations($status);
 		$this->template('admin/reservations',$data);
 	}
+	//CONTACT_FORMs
+	public function contact_forms($status = 'new')
+	{
+		$user = $this->check_login();
+		$data['page_title'] = $status.' contact forms';
+		$data['page_active'] = $status.'_contact_forms';
+		$data['forms'] = $this->model->contact_forms($status);
+		$this->template('admin/contact_forms',$data);
+	}
 	//CATs
 	public function cats($status = 'all')
 	{
@@ -258,6 +267,15 @@ class Admin extends CI_Controller {
 		$data['menu'] = 'service_box';
 		$data['service_boxs'] = $this->model->service_boxs();
 		$this->template('admin/service_boxs', $data);
+	}
+	public function gallery()
+	{
+		$user = $this->check_login();
+		$data['title'] = "Admin Panel";
+		$data['page_title'] = 'Gallery';
+		$data['menu'] = 'gallery';
+		$data['gallery'] = $this->model->gallery();
+		$this->template('admin/gallery', $data);
 	}
 	/**
 	*
@@ -391,7 +409,32 @@ class Admin extends CI_Controller {
 		$resp = $this->db->insert("service_box", $_POST);
 		redirect("admin/service-boxs/?msg=Service Box Added!");
 	}
-	
+	public function post_gallery()
+	{
+		$user = $this->check_login();
+		foreach($_FILES["image"]["tmp_name"] as $key => $img) {
+
+			$_FILES['file']['name']       = $_FILES['image']['name'][$key];
+            $_FILES['file']['type']       = $_FILES['image']['type'][$key];
+            $_FILES['file']['tmp_name']   = $_FILES['image']['tmp_name'][$key];
+            $_FILES['file']['error']      = $_FILES['image']['error'][$key];
+            $_FILES['file']['size']       = $_FILES['image']['size'][$key];
+
+			$config['upload_path'] = 'uploads/';
+	    	$config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG';
+	    	$config['encrypt_name'] = TRUE;
+	    	$ext = pathinfo($_FILES["file"]['name'], PATHINFO_EXTENSION);
+			$new_name = md5(time().$_FILES["file"]['name']).'.'.$ext;
+			$config['file_name'] = $new_name;
+	    	$resp = $this->load->library('upload', $config);
+	    	if ($resp) {
+	        	$this->upload->do_upload('file');
+				$insert['image'] = $this->upload->data()['file_name'];
+				$this->db->insert("gallery", $insert);
+	    	}
+		}
+		redirect("admin/gallery/?msg=Photos Added!");
+	}
 	/**
 	*
 
@@ -778,6 +821,22 @@ class Admin extends CI_Controller {
 			redirect("admin/service-boxs/?error=1&msg=Service box has failed to delete. Try Again!");
 		}
 	}
+	public function delete_gallery()
+	{
+		$user = $this->check_login();
+		$photo = $this->model->get_row("SELECT `image` FROM `gallery` WHERE `gallery_id` = '".$_GET['id']."';");
+		$this->db->where('gallery_id', $_GET['id']);
+		$resp = $this->db->delete('gallery');
+		if($resp)
+		{
+			unlink('uploads/'.$photo['img']);
+			redirect("admin/gallery?msg=Photo has Deleted");
+		}
+		else
+		{
+			redirect("admin/gallery?error=1&msg=Photo has failed to delete. Try Again!");
+		}
+	}
 	/**
 	*
 
@@ -803,6 +862,30 @@ class Admin extends CI_Controller {
         	}
         	else{
 				echo json_encode(array("status"=>false,"data"=>'File Must be an image file.'));
+        	}
+		}
+		else{
+			redirect('logout');
+		}
+	}
+	public function post_pdf_ajax()
+	{
+		$user = $this->check_login();
+		if ($_FILES){
+			$config['upload_path'] = 'uploads/';
+        	$config['allowed_types'] = 'PDF|pdf';
+        	$config['encrypt_name'] = TRUE;
+        	$ext = pathinfo($_FILES["img"]['name'], PATHINFO_EXTENSION);
+			$new_name = md5(time().$_FILES["img"]['name']).'.'.$ext;
+			$config['file_name'] = $new_name;
+        	$resp = $this->load->library('upload', $config);
+        	if ($resp) {
+	        	$this->upload->do_upload('img');
+				$FileName = $this->upload->data()['file_name'];
+				echo json_encode(array("status"=>true,"data"=>$FileName));
+        	}
+        	else{
+				echo json_encode(array("status"=>false,"data"=>'File Must be a PDF file.'));
         	}
 		}
 		else{
@@ -876,6 +959,21 @@ class Admin extends CI_Controller {
 			$update['status'] = $_POST['status'];
 			$this->db->where('reservation_id',$_POST['id']);
 			$resp = $this->db->update('reservation',$update);
+			if ($resp) {
+				echo json_encode(array("status"=>true,"msg"=>"changed."));
+			}
+			else{
+				echo json_encode(array("status"=>false,"msg"=>"not changed, please try again or reload your web page."));
+			}
+		}
+	}
+	public function change_contact_form_status()
+	{
+		$user = $this->check_login();
+		if ($_POST) {
+			$update['status'] = $_POST['status'];
+			$this->db->where('contact_form_id',$_POST['id']);
+			$resp = $this->db->update('contact_form',$update);
 			if ($resp) {
 				echo json_encode(array("status"=>true,"msg"=>"changed."));
 			}

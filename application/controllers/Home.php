@@ -48,6 +48,14 @@ class Home extends CI_Controller {
 		$this->load->view($page,$data);
 		$this->load->view('footer',$data);
 	}
+	public function page_not_found()
+	{
+		$data['meta_title'] = 'Page Not Found';
+		$data['meta_key'] = 'Page Not Found';
+		$data['meta_desc'] = 'Page Not Found';
+		$data['open_graph'] = 'Page Not Found';
+		$this->template('errors/page_not_found',$data);
+	}
 	/**
 	*
 
@@ -102,7 +110,7 @@ class Home extends CI_Controller {
 		$data['news'] = $this->model->blog();
 		$this->template('index2',$data);
 	}
-	public function events($value='')
+	public function events()
 	{
 		$data['events_nav'] = 'current';
 		$data['meta_title'] = 'Events';
@@ -112,7 +120,17 @@ class Home extends CI_Controller {
 		$data['events'] = $this->model->blog();
 		$this->template('events',$data);
 	}
-	public function reservation($value='')
+	public function gallery()
+	{
+		$data['gallery_nav'] = 'current';
+		$data['meta_title'] = 'Gallery';
+		$data['meta_key'] = 'Gallery';
+		$data['meta_desc'] = 'Gallery';
+		$data['open_graph'] = 'Gallery';
+		$data['gallery'] = $this->model->gallery();
+		$this->template('gallery',$data);
+	}
+	public function reservation()
 	{
 		$data['reservation_nav'] = 'current';
 		$data['meta_title'] = 'Reservation';
@@ -124,24 +142,42 @@ class Home extends CI_Controller {
 	public function about_us()
 	{
 		$data['page'] = $this->model->get_page_byid(2);
+		$data['about_us_nav'] = 'current';
 		$data['meta_title'] = $data['page']['meta_title'];
 		$data['meta_key'] = $data['page']['meta_key'];
 		$data['meta_desc'] = $data['page']['meta_desc'];
 		$data['open_graph'] = $data['page']['open_graph'];
-		$data['home_page'] = false;
-		$data['activeAboutUs'] = 'active';
+		$data['service_boxs'] = $this->model->service_boxs();
 		$this->template('about_us',$data);
 	}
 	public function contact_us()
 	{
 		$data['page'] = $this->model->get_page_byid(3);
+		$data['contact_us_nav'] = 'current';
 		$data['meta_title'] = $data['page']['meta_title'];
 		$data['meta_key'] = $data['page']['meta_key'];
 		$data['meta_desc'] = $data['page']['meta_desc'];
 		$data['open_graph'] = $data['page']['open_graph'];
-		$data['home_page'] = false;
-		$data['activeContactUs'] = 'active';
 		$this->template('contact_us',$data);
+	}
+	public function menu()
+	{
+		$data['menu_nav'] = 'current';
+		$data['meta_title'] = 'Menu';
+		$data['meta_key'] = 'Menu';
+		$data['meta_desc'] = 'Menu';
+		$data['open_graph'] = 'Menu';
+		$data['products'] = $this->model->get_non_deal_products();
+		$this->template('menu',$data);
+	}
+	public function pdf()
+	{
+		$data['pdf_nav'] = 'current';
+		$data['meta_title'] = 'Menu';
+		$data['meta_key'] = 'Menu';
+		$data['meta_desc'] = 'Menu';
+		$data['open_graph'] = 'Menu';
+		$this->template('pdf',$data);
 	}
 	public function category($slug)
 	{
@@ -189,6 +225,18 @@ class Home extends CI_Controller {
 		$data['meta_desc'] = $data['product']['meta_desc'];
 		$data['open_graph'] = $data['page']['open_graph'];
 		$this->template('product',$data);
+	}
+	public function cart()
+	{
+		if ($_SESSION['cart']) {
+			$data['meta_title'] = 'Cart';
+			$data['meta_key'] = 'Cart';
+			$data['meta_desc'] = 'Cart';
+			$this->template('cart',$data);
+		}
+		else{
+			redirect('home');
+		}
 	}
 	public function checkout()
 	{
@@ -612,32 +660,7 @@ class Home extends CI_Controller {
 	{
 		if ($_POST) {
 			parse_str($_POST['data'],$post);
-			$to = 'usman_ghani940@yahoo.com';
-			$subject = 'New Contact Us Form | hotpocket.pk';
-			$message = '<h1>Name: '.$post['name'].'</h1>';
-			$message .= '<h1>Email: '.$post['email'].'</h1>';
-			$message .= '<h1>Subject: '.$post['subject'].'</h1>';
-			$message .= '<p>Any Note: '.$post['msg'].'</p>';
-			$from = 'info@hotpockit.com';
-			$headers = ''; 
-		    $headers .= "From: ".$from."" ."\r\n";
-			$headers .= "MIME-Version: 1.0\r\n";
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-			$headers .= "X-Priority: 3\r\n";
-			$headers .= "X-Mailer: PHP". phpversion() ."\r\n" ;
-
-			$mobile = str_replace('+', '', '923327147122');
-			$mobile = preg_replace('/-/', '', $mobile, 1);
-			$mobile = preg_replace('/=/', '', $mobile, 1);
-			$mobile = preg_replace('/00/', '', $mobile, 2);
-			$mobile = preg_replace('/0/', '92', $mobile, 1);
-			$sms_setting = $this->model->sms_setting();
-			$mask = urlencode('HotPocket');
-			$pass = urlencode('hotpocket1281');
-			$id = urlencode('hotpocket');
-			$msg = urlencode($message);
-			file_get_contents("https://fastsmsalerts.com/api/composesms&id=".$id."&pass=".$pass."&mask=".$mask."&to=".$mobile."&portable=&lang=english&msg=".$msg."&type=json");
-			mail($to, $subject, $message, $headers);
+			$this->db->insert('contact_form',$post);
 			echo json_encode(array("status"=>true,"msg"=>"message submitted, we'll contact back you very soon. Thank You :)"));
 		}
 		else{

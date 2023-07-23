@@ -13,7 +13,7 @@
                     <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images">
                         <figure class="woocommerce-product-gallery__wrapper">
                             <div class="woocommerce-product-gallery__image">
-                                <img id="zoom-image" class="attachment-shop_single size-shop_single wp-post-image" src="<?=IMG?>shop-single-medium-1.jpg" data-zoom-image="<?=UPLOADS.$product['image']?>" alt="<?=$product['title']?>" />
+                                <img id="zoom-image" class="attachment-shop_single size-shop_single wp-post-image" src="<?=UPLOADS.$product['image']?>" data-zoom-image="<?=UPLOADS.$product['image']?>" alt="<?=$product['title']?>" />
                             </div>
                         </figure>
                     </div>

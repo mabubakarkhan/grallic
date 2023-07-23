@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $controller_exceptions = array('admin','api','seo');
 $route['404_override'] = '';
 
+$route["home"] = 'Home/index';
 $route["index"] = 'Home/index';
 $route["index2"] = 'Home/index2';
 $route["about-us"] = 'Home/about_us';
@@ -49,18 +50,25 @@ $route["contact-us"] = 'Home/contact_us';
 $route["events"] = 'Home/events';
 $route["reservation"] = 'Home/reservation';
 $route["post-reservation"] = 'Home/post_reservation';
+$route["gallery"] = 'Home/gallery';
+$route["menu"] = 'Home/menu';
 
 $route["category/(.*)"] = 'Home/category/$1';
 $route["product/(.*)"] = 'Home/product/$1';
 $route["add-to-cart"] = 'Home/add_to_cart';
 $route["delete-cart-item"] = 'Home/delete_cart_item';
 $route["change-cart-value"] = 'Home/change_cart_value';
+$route["cart"] = 'Home/cart';
 $route["checkout"] = 'Home/checkout';
 $route["submit-order"] = 'Home/submit_order';
 
 $route["post-photo-ajax"] = 'Home/post_photo_ajax';
 
 $route["submit-contact-form"] = 'Home/submit_contact_form';
+
+$route["pdf"] = 'Home/pdf';
+
+$route['404_override'] = 'Home/page_not_found';
 
 
 // Test matter

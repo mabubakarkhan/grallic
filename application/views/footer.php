@@ -59,6 +59,12 @@
 		<span class="lnr lnr-arrow-up"></span>
 	</div>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<a href="https://api.whatsapp.com/send?phone=<?=$setting['whatsapp']?>" class="whatsapp-float" target="_blank">
+		<i class="fa fa-whatsapp whatsapp-my-float"></i>
+	</a>
+
+
 	<script src="<?=JS?>jquery-3.3.1.min.js"></script>
 
 	<script src="<?=VENDOR?>bootstrap/bootstrap.min.js"></script>
@@ -338,12 +344,14 @@
 				if (resp.status == true) {
 					$(".cartSection .list-of-items").html(resp.html);
 					$(".cartSection .cart-count").html(resp.count);
-					$(".cartSection .cart-total").html(resp.total);
+					$(".cart-total").html(resp.total);
 					//$('.overlay').addClass('opened');
+					$this.parent('td').parent('tr').remove();
 					if (resp.count == '0') {
 						$(".cartSection .select-area").hide(0);
 						$("table.baskit-table").remove();
 						$this.parent('li').remove();
+						$(".cart-total").html(0);
 					}
 					else{
 						$(".cartSection .select-area").show(0);

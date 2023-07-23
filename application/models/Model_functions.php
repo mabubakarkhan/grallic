@@ -76,6 +76,16 @@ class Model_functions extends CI_Model {
 			return $this->get_results("SELECT * FROM `reservation` WHERE `status` = '$status' ORDER BY `date_at` ASC");
 		}
 	}
+	//CONTACT_FORMs
+	public function contact_forms($status = 'all')
+	{
+		if ($status == 'all') {
+			return $this->get_results("SELECT * FROM `contact_form` ORDER BY `at` ASC");
+		}
+		else{
+			return $this->get_results("SELECT * FROM `contact_form` WHERE `status` = '$status' ORDER BY `at` ASC");
+		}
+	}
 	//CATs
 	public function get_cats($status)
 	{
@@ -292,5 +302,9 @@ class Model_functions extends CI_Model {
 	public function get_slider_byid($id)
 	{
 		return $this->get_row("SELECT * FROM `slider` WHERE `slider_id` = '$id';");
+	}
+	public function gallery($id)
+	{
+		return $this->get_results("SELECT * FROM `gallery` ORDER BY `gallery_id` ASC;");
 	}
 }

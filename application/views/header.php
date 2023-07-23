@@ -66,9 +66,14 @@
 						Home
 					</a>
 				</li>
+				<li class="<?=$menu_nav?>">
+					<a href="<?=BASEURL.'menu'?>">
+						Menu
+					</a>
+				</li>
 				<li class="has-children <?=$category_nav?>">
 					<a href="#">
-						Menu
+						Shop
 					</a>
 					<div class="sub-menu">
 						<div class="wrapper">
@@ -107,6 +112,21 @@
 						Events
 					</a>
 				</li>
+				<li class="<?=$gallery_nav?>">
+					<a href="<?=BASEURL.'gallery'?>">
+						Gallery
+					</a>
+				</li>
+				<li class="<?=$about_us_nav?>">
+					<a href="<?=BASEURL.'about-us'?>">
+						About Us
+					</a>
+				</li>
+				<li class="<?=$contact_us_nav?>">
+					<a href="<?=BASEURL.'contact-us'?>">
+						Contact Us
+					</a>
+				</li>
 			</ul>
 			
 			<div class="action align-items-center">
@@ -131,7 +151,7 @@
 		                                        </a>
 		                                        <span class="quantity">
 		                                            <span class="woocommerce-Price-amount amount">
-		                                                <span class="woocommerce-Price-currencySymbol"><?=$CURRENCY?></span><?=$q['price_total']?>
+		                                                <span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span><?=$q['price_total']?>
 		                                            </span>
 		                                            x<?=$q['qty']?>
 		                                        </span>
@@ -141,19 +161,19 @@
 	                                <p class="woocommerce-mini-cart__total total">
 	                                    <strong>Subtotal:</strong>
 	                                    <span class="woocommerce-Price-amount amount">
-	                                        <span class="woocommerce-Price-currencySymbol"><?=$CURRENCY?></span>
+	                                        <span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span>
 	                                        <x class="cart-total"><?=$_SESSION['total']?></x>
 	                                    </span>
 	                                </p>
 	                                <p class="woocommerce-mini-cart__total total">
 	                                    <strong>Total:</strong>
 	                                    <span class="woocommerce-Price-amount amount color-cdaa7c">
-	                                        <span class="woocommerce-Price-currencySymbol"><?=$CURRENCY?></span>
+	                                        <span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span>
 	                                        <x class="cart-total"><?=$_SESSION['total']?></x>
 	                                    </span>
 	                                </p>
 	                                <p class="woocommerce-mini-cart__buttons buttons">
-	                                    <a href="#" class="button wc-forward view-cart">View cart</a>
+	                                    <a href="<?=BASEURL.'cart'?>" class="button wc-forward view-cart">View cart</a>
 	                                    <a href="#" class="button checkout wc-forward">Checkout</a>
 	                                </p>
 	                            </div>
@@ -161,7 +181,7 @@
 	                    </div>
 	                </div>
 	            </div>
-				<a href="<?=BASEURL.'reservation'?>" class="au-btn au-btn--hover has-bd">Booking now</a>
+				<!-- <a href="<?=BASEURL.'reservation'?>" class="au-btn au-btn--hover has-bd">Booking now</a> -->
 				<span class="lnr lnr-menu menu-sidebar-icon"></span>
 			</div>
 		</nav>
@@ -183,62 +203,46 @@
 						<div class="action">
 							<div class="notify">
 								<img src="<?=IMG?>notify.png" alt>
-								<span class="notify-amount">0</span>
+								<span class="notify-amount"><?=count($_SESSION['cart'])?></span>
 
 								<div id="woocommerce_widget_cart-2" class="widget woocommerce widget_shopping_cart">
 									<div class="widget_shopping_cart_content">
 										<ul class="woocommerce-mini-cart cart_list product_list_widget ">
-											<li class="woocommerce-mini-cart-item mini_cart_item clearfix">
-												<a href="#" class="remove remove_from_cart_button"
-													aria-label="Remove this item">
-													<span class="lnr lnr-cross-circle"></span>
-												</a>
-												<a href="#" class="image-holder">
-													<img src="<?=IMG?>widget-cart-thumb-1.jpg"
-														class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-														alt>
-													<span class="product-name">Best Brownies</span>
-												</a>
-												<span class="quantity">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>18
-													</span>
-													x1
-												</span>
-											</li>
-											<li class="woocommerce-mini-cart-item mini_cart_item clearfix">
-												<a href="#" class="remove remove_from_cart_button"
-													aria-label="Remove this item">
-													<span class="lnr lnr-cross-circle"></span>
-												</a>
-												<a href="#" class="image-holder">
-													<img src="<?=IMG?>widget-cart-thumb-2.jpg"
-														class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-														alt>
-													<span class="product-name">Angela's Awesome</span>
-												</a>
-												<span class="quantity">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>28
-													</span>
-													x3
-												</span>
-											</li>
+
+											<?php foreach ($_SESSION['cart'] as $key => $q): ?>
+			                                    <li class="woocommerce-mini-cart-item mini_cart_item clearfix">
+			                                        <a href="javascript://" data-key="<?=$key?>" class="delete-cart-item remove remove_from_cart_button"
+			                                            aria-label="Remove this item">
+			                                            <span class="lnr lnr-cross-circle"></span>
+			                                        </a>
+			                                        <a href="#" class="image-holder">
+			                                            <img src="<?=UPLOADS.$q['image']?>" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="<?=$q['product']?>">
+			                                            <span class="product-name"><?=$q['product']?></span>
+			                                        </a>
+			                                        <span class="quantity">
+			                                            <span class="woocommerce-Price-amount amount">
+			                                                <span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span><?=$q['price_total']?>
+			                                            </span>
+			                                            x<?=$q['qty']?>
+			                                        </span>
+			                                    </li>
+		                                    <?php endforeach ?>
+
 										</ul>
 										<p class="woocommerce-mini-cart__total total">
 											<strong>Subtotal:</strong>
 											<span class="woocommerce-Price-amount amount">
-												<span class="woocommerce-Price-currencySymbol">$</span>102
+												<span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span><?=$_SESSION['total']?>
 											</span>
 										</p>
 										<p class="woocommerce-mini-cart__total total">
 											<strong>Total:</strong>
 											<span class="woocommerce-Price-amount amount color-cdaa7c">
-												<span class="woocommerce-Price-currencySymbol">$</span>102
+												<span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span><?=$_SESSION['total']?>
 											</span>
 										</p>
 										<p class="woocommerce-mini-cart__buttons buttons">
-											<a href="#" class="button wc-forward view-cart">View cart</a>
+											<a href="<?=BASEURL.'cart'?>" class="button wc-forward view-cart">View cart</a>
 											<a href="#" class="button checkout wc-forward">Checkout</a>
 										</p>
 									</div>
@@ -257,10 +261,14 @@
 							Home
 						</a>
 					</li>
-					
+					<li class="<?=$menu_nav?>">
+						<a href="<?=BASEURL.'menu'?>">
+							Menu
+						</a>
+					</li>
 					<li class="<?=$category_nav?>">
 						<a href="#">
-							Menu
+							Shop
 						</a>
 						<ul>
 							<?php foreach ($cats as $key => $cat): ?>
@@ -289,6 +297,21 @@
 					<li class="<?=$events_nav?>">
 						<a href="<?=BASEURL.'events'?>">
 							Events
+						</a>
+					</li>
+					<li class="<?=$gallery_nav?>">
+						<a href="<?=BASEURL.'gallery'?>">
+							Gallery
+						</a>
+					</li>
+					<li class="<?=$about_us_nav?>">
+						<a href="<?=BASEURL.'about-us'?>">
+							About Us
+						</a>
+					</li>
+					<li class="<?=$contact_us_nav?>">
+						<a href="<?=BASEURL.'Contact-us'?>">
+							Contact Us
 						</a>
 					</li>
 				</ul>
