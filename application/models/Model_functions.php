@@ -303,7 +303,7 @@ class Model_functions extends CI_Model {
 	{
 		return $this->get_row("SELECT * FROM `slider` WHERE `slider_id` = '$id';");
 	}
-	public function gallery($id)
+	public function gallery()
 	{
 		return $this->get_results("SELECT * FROM `gallery` ORDER BY `gallery_id` ASC;");
 	}
