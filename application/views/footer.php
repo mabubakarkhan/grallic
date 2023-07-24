@@ -3,14 +3,15 @@
 			<div class="container">
 				<div class="ft-top-wrapper">
 					<div class="ft-logo">
-						<a href="index-2.html">
-							<img src="<?=IMG?>logo.png" alt>
+						<a href="<?=BASEURL?>">
+							<img src="<?=IMG?>logo.png" width="100">
 						</a>
 					</div>
 					<div class="row justify-content-between justify-content-xl-start">
 						<div class="col-md-3  ft-col">
 							<h6>About Us</h6>
 							<p><?=$setting['about']?></p>
+							<p><a href="<?=UPLOADS.$setting['pdf']?>" target="_blank" style="color: #cdaa7c;display: inline-block;padding: 7px 20px;border: 1px solid #cdaa7c;margin-top: 12px;">Download Menu</a></p>
 						</div>
 						<div class="col-md-5  col-xl-4 offset-xl-1 ft-col">
 							<h6>Get news & offers</h6>
