@@ -128,7 +128,7 @@
 					<div class="row row-lg">	
 		              	<div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
-								<h4 class="example-title">Image</h4>
+								<h4 class="example-title">Image (800 x 602)</h4>
 								<div class="example">
 									<input type="file" id="input-file-now" data-plugin="dropify" data-default-file="<?=UPLOADS.$q['image']?>"/>
 									<input type="text" name="image" value="<?=$q['image']?>" hidden>
@@ -140,7 +140,7 @@
 		           	<div class="row row-lg">	
 		              	<div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
-								<h4 class="example-title">Menu Icon</h4>
+								<h4 class="example-title">Menu Icon (37 x 26)</h4>
 								<div class="example">
 									<input type="file" id="input-file-now-2" data-plugin="dropify" data-default-file="<?=UPLOADS.$q['icon']?>"/>
 									<input type="text" name="icon" value="<?=$q['icon']?>" hidden>
