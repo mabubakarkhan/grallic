@@ -873,7 +873,7 @@ class Admin extends CI_Controller {
 		$user = $this->check_login();
 		if ($_FILES){
 			$config['upload_path'] = 'uploads/';
-        	$config['allowed_types'] = 'PDF|pdf';
+        	$config['allowed_types'] = 'jpg|pdf';
         	$config['encrypt_name'] = TRUE;
         	$ext = pathinfo($_FILES["img"]['name'], PATHINFO_EXTENSION);
 			$new_name = md5(time().$_FILES["img"]['name']).'.'.$ext;
