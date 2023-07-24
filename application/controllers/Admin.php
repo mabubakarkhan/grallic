@@ -871,6 +871,7 @@ class Admin extends CI_Controller {
 	public function post_pdf_ajax()
 	{
 		error_reporting(E_ALL);
+		var_dump($_FILES);die;
 		$user = $this->check_login();
 		if ($_FILES){
 			$config['upload_path'] = 'uploads/';
