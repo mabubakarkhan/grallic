@@ -82,9 +82,9 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 }
 else
 {
-	define('_DB_USER', "cubixtechnologyc_grallic");
-	define('_DB_PASS', "7lT)eBzzkIyf");
-	define('_DB_NAME', "cubixtechnologyc_grallic");
+	define('_DB_USER', "olympiareception_user_ttest");
+	define('_DB_PASS', "14GmK@R.?91r");
+	define('_DB_NAME', "olympiareception_db_test");
 	define('_DB_HOST', "localhost");
 }
 
