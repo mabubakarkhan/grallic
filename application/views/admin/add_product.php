@@ -64,7 +64,7 @@
 							</div><!-- /example-wrap -->
 			            </div><!-- /12/form-horizontal -->
 
-						<div class="col-lg-12 form-horizontal">
+						<div class="col-lg-6 form-horizontal">
 		                	<div class="example-wrap">
 								<div class="form-group form-material">
 									<label class="col-lg-12 col-sm-3 control-label">Title <span class="required">*</span></label>
@@ -73,7 +73,18 @@
 									</div><!-- /12 -->
 								</div><!-- /form-group -->
 							</div><!-- /example-wrap -->
-	              		</div><!-- /12/form-horizontal -->
+	              		</div><!-- /6/form-horizontal -->
+
+	              		<div class="col-lg-6 form-horizontal">
+		                	<div class="example-wrap">
+								<div class="form-group form-material">
+									<label class="col-lg-12 col-sm-3 control-label">Title french</label>
+									<div class=" col-lg-12 col-sm-9">
+										<input type="text" name="title_fr" placeholder="Title French" class="form-control" value="<?=$q['title_fr']?>">
+									</div><!-- /12 -->
+								</div><!-- /form-group -->
+							</div><!-- /example-wrap -->
+	              		</div><!-- /6/form-horizontal -->
 
 	              		<div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
@@ -85,6 +96,28 @@
 								</div><!-- /form-group -->
 							</div><!-- /example-wrap -->
 	              		</div><!-- /12/form-horizontal -->
+
+	              		<div class="col-lg-6 form-horizontal">
+		                	<div class="example-wrap">
+								<div class="form-group form-material">
+									<label class="col-lg-12 col-sm-3 control-label">Recipe</label>
+									<div class=" col-lg-12 col-sm-9">
+										<textarea class="form-control" class="form-control" placeholder="Recipe" name="recipe" row="10"><?=$q['recipe']?></textarea>
+									</div><!-- /12 -->
+								</div><!-- /form-group -->
+							</div><!-- /example-wrap -->
+	              		</div><!-- /6/form-horizontal -->
+
+	              		<div class="col-lg-6 form-horizontal">
+		                	<div class="example-wrap">
+								<div class="form-group form-material">
+									<label class="col-lg-12 col-sm-3 control-label">Recipe French</label>
+									<div class=" col-lg-12 col-sm-9">
+										<textarea class="form-control" class="form-control" placeholder="Recipe French" name="recipe_fr" row="10"><?=$q['recipe_fr']?></textarea>
+									</div><!-- /12 -->
+								</div><!-- /form-group -->
+							</div><!-- /example-wrap -->
+	              		</div><!-- /6/form-horizontal -->
 
 	              		<div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
