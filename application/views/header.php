@@ -71,7 +71,12 @@
 						Menu
 					</a>
 				</li>
-				<li class="has-children <?=$category_nav?>">
+				<li>
+					<a href="<?=UPLOADS.$setting['pdf']?>" target="_balnk">
+						Menu PDF
+					</a>
+				</li>
+				<li class="has-children <?=$category_nav?>" style="display: none;">
 					<a href="#">
 						Shop
 					</a>
@@ -266,7 +271,12 @@
 							Menu
 						</a>
 					</li>
-					<li class="<?=$category_nav?>">
+					<li>
+						<a href="<?=UPLOADS.$setting['pdf']?>" target="_balnk">
+							Menu PDF
+						</a>
+					</li>
+					<li class="<?=$category_nav?>" style="display: none;">
 						<a href="#">
 							Shop
 						</a>

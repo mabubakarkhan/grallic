@@ -169,7 +169,7 @@ select{
     background: #000;
 }
 .navbar-desktop>ul>li>a{
-    font-size: 15px;
+    font-size: 14px;
 }
 .whatsapp-float{
     position:fixed;
@@ -188,4 +188,7 @@ select{
 }
 .event-col{
     margin-bottom: 20px;
+}
+.our-service-col{
+    background: #7a521c;
 }

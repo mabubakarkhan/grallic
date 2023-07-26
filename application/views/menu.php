@@ -14,9 +14,9 @@
                         <?php foreach ($products as $key_ => $product): ?>
                             <?php if ($product['category_id'] == $cat['category_id']): ?>
                                 <div class="col-md-6 menu-holder">
-                                    <a href="<?=BASEURL.'product/'.$product['slug']?>" class="menu-thumb">
+                                    <!-- <a href="<?=BASEURL.'product/'.$product['slug']?>" class="menu-thumb">
                                         <img src="<?=UPLOADS.$product['image']?>" alt="<?=$product['title']?>">
-                                    </a>
+                                    </a> -->
                                     <div class="menu-item">
                                         <h5 class="bold-color">
                                             <a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
