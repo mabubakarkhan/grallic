@@ -222,7 +222,6 @@ class Model_functions extends CI_Model {
 	}
 	public function get_non_deal_products()
 	{
-		die;
 		$cats = $this->get_row("SELECT GROUP_CONCAT(`category_id`) AS 'ids' FROM `category` WHERE `status` = 'active' AND `deal` = 'no';");
 		if ($cats) {
 			$ids = $cats['ids'];

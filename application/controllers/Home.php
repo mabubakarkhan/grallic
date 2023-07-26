@@ -77,7 +77,7 @@ class Home extends CI_Controller {
 		$data['meta_desc'] = $data['page']['meta_desc'];
 		$data['open_graph'] = $data['page']['open_graph'];
 		$data['home_page'] = true;
-		$data['deal_products'] = $this->model->get_deal_products();
+		//$data['deal_products'] = $this->model->get_deal_products();
 		$data['products'] = $this->model->get_non_deal_products();
 		$data['slider'] = $this->model->get_results("
 			SELECT s.*, p.title AS product, p.slug AS product_slug 
@@ -98,7 +98,7 @@ class Home extends CI_Controller {
 		$data['meta_desc'] = $data['page']['meta_desc'];
 		$data['open_graph'] = $data['page']['open_graph'];
 		$data['home_page'] = true;
-		$data['deal_products'] = $this->model->get_deal_products();
+		//$data['deal_products'] = $this->model->get_deal_products();
 		$data['products'] = $this->model->get_non_deal_products();
 		$data['slider'] = $this->model->get_results("
 			SELECT s.*, p.title AS product, p.slug AS product_slug 
