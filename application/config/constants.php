@@ -91,7 +91,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 }
 else
 {
-	define('BASEURL', 'http://olympiareception.com/');
+	define('BASEURL', 'https://olympiareception.com/');
 }
 define('APP_TITLE', 'Grallic');
 define('ASSET', BASEURL.'asset/');
