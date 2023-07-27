@@ -28,7 +28,10 @@
                                             </span>
                                         </h5>
                                         <ul>
-                                            <?php if ($product['small'] > 0): ?>
+                                            <li>
+                                                <?=$product['recipe']?>
+                                            </li>
+                                            <!-- <?php if ($product['small'] > 0): ?>
                                                 <li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
                                             <?php endif ?>
                                             <?php if ($product['medium'] > 0): ?>
@@ -39,7 +42,7 @@
                                             <?php endif ?>
                                             <?php if ($product['family'] > 0): ?>
                                                 <li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
-                                            <?php endif ?>
+                                            <?php endif ?> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -56,8 +59,8 @@
         <section class="section-primary pb-120">
             <div class="container">
                 <div class="section-header">
-                    <h2>Deals</h2>
-                    <span>~ our deals ~</span>
+                    <h2>Family Combos</h2>
+                    <span>~ our combos ~</span>
                 </div>
                 <div class="row">
                     <?php foreach ($deals as $key => $deal): ?>

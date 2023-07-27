@@ -195,6 +195,9 @@
 									</div>
 									<div class="body">
 										<?php foreach ($products as $key => $product): ?>
+											<?php if ($key == 4): ?>
+												<?php break; ?>
+											<?php endif ?>
 											<?php if ($product['category_id'] == $cat['category_id']): ?>
 												<div class="menu-item">
 													<h5 class="bold-color">
@@ -206,7 +209,17 @@
 														</span>
 													</h5>
 													<ul>
-														<?php if ($product['small'] > 0): ?>
+														<li>
+															<?php
+															if (strlen($product['recipe']) > 60) {
+																echo substr($product['recipe'], 0, 60).'...';
+															}
+															else{
+																echo $product['recipe'];	
+															}
+															?>
+														</li>
+														<!-- <?php if ($product['small'] > 0): ?>
 															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
 														<?php endif ?>
 														<?php if ($product['medium'] > 0): ?>
@@ -217,7 +230,7 @@
 														<?php endif ?>
 														<?php if ($product['family'] > 0): ?>
 															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
-														<?php endif ?>
+														<?php endif ?> -->
 													</ul>
 												</div>
 											<?php endif ?>
