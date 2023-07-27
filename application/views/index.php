@@ -195,7 +195,7 @@
 									</div>
 									<div class="body">
 										<?php foreach ($products as $key => $product): ?>
-											<?php if ($key == 4): ?>
+											<?php if ($key == 6): ?>
 												<?php break; ?>
 											<?php endif ?>
 											<?php if ($product['category_id'] == $cat['category_id']): ?>
@@ -208,30 +208,32 @@
 															<?=$product['price']?>
 														</span>
 													</h5>
-													<ul>
-														<li>
-															<?php
-															if (strlen($product['recipe']) > 60) {
-																echo substr($product['recipe'], 0, 60).'...';
-															}
-															else{
-																echo $product['recipe'];	
-															}
-															?>
-														</li>
-														<!-- <?php if ($product['small'] > 0): ?>
-															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
-														<?php endif ?>
-														<?php if ($product['medium'] > 0): ?>
-															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/medium'?>">Medium</a></li>
-														<?php endif ?>
-														<?php if ($product['large'] > 0): ?>
-															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/large'?>">Large</a></li>
-														<?php endif ?>
-														<?php if ($product['family'] > 0): ?>
-															<li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
-														<?php endif ?> -->
-													</ul>
+													<?php if (1==2): ?>
+														<ul>
+															<li>
+																<?php
+																if (strlen($product['recipe']) > 60) {
+																	echo substr($product['recipe'], 0, 60).'...';
+																}
+																else{
+																	echo $product['recipe'];	
+																}
+																?>
+															</li>
+															<!-- <?php if ($product['small'] > 0): ?>
+																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
+															<?php endif ?>
+															<?php if ($product['medium'] > 0): ?>
+																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/medium'?>">Medium</a></li>
+															<?php endif ?>
+															<?php if ($product['large'] > 0): ?>
+																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/large'?>">Large</a></li>
+															<?php endif ?>
+															<?php if ($product['family'] > 0): ?>
+																<li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
+															<?php endif ?> -->
+														</ul>
+													<?php endif ?>
 												</div>
 											<?php endif ?>
 										<?php endforeach ?>
