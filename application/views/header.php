@@ -350,6 +350,7 @@
 				<img src="<?=IMG?>logo-menu-sidebar.png" alt>
 			</a>
 			<p class="text"><?=$setting['about']?></p>
+			<?php if (1==2): ?>
 			<div class="owl-carousel owl-theme sidebar-custom-images image-slider style-1" id="image-carousel">
 				<?php foreach ($home_products as $key => $product): ?>
 					<div class="item">
@@ -359,6 +360,7 @@
 					</div>
 				<?php endforeach ?>
 			</div>
+			<?php endif ?>
 
 			<div class="contact-part">
 				<div class="contact-line">

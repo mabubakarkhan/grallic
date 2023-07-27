@@ -44,7 +44,7 @@ class Home extends CI_Controller {
 		$data['setting'] = $this->model->setting();
 		$data['seo_tags'] = $this->model->seo_tags();
 		$data['cats'] = $this->model->get_cats('active');
-		$data['home_products'] = $this->model->get_home_products();
+		//$data['home_products'] = $this->model->get_home_products();
 		$this->load->view('header',$data);
 		$this->load->view($page,$data);
 		$this->load->view('footer',$data);
@@ -78,7 +78,8 @@ class Home extends CI_Controller {
 		$data['open_graph'] = $data['page']['open_graph'];
 		$data['home_page'] = true;
 		//$data['deal_products'] = $this->model->get_deal_products();
-		$data['products'] = $this->model->get_non_deal_products();
+		// $data['products'] = $this->model->get_non_deal_products();
+		$data['products'] = $this->model->get_results("SELECT * FROM `product` WHERE `status` = 'active' ORDER BY `price` ASC;");
 		$data['slider'] = $this->model->get_results("
 			SELECT s.*, p.title AS product, p.slug AS product_slug 
 			FROM `slider` AS s 

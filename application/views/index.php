@@ -172,10 +172,10 @@
 				</div>
 				<div class="our-menu-alternate">
 
-					<?php foreach ($cats as $key => $cat): ?>
+					<?php foreach ($cats as $key_cat => $cat): ?>
 						<?php if ($cat['deal'] == 'no'): ?>
 							<?php
-							if($key%2==0){
+							if($key_cat%2==0){
 								$classStyle = 'style-2';
 							}
 							else{
@@ -194,11 +194,15 @@
 										</span>
 									</div>
 									<div class="body">
-										<?php foreach ($products as $key => $product): ?>
-											<?php if ($key == 6): ?>
-												<?php break; ?>
-											<?php endif ?>
+										<?php $productCount = 0; ?>
+										<?php foreach ($products as $keyProduct => $product): ?>
 											<?php if ($product['category_id'] == $cat['category_id']): ?>
+												<?php
+												$productCount++;
+												if ($productCount > 5) {
+													break;
+												}
+												?>
 												<div class="menu-item">
 													<h5 class="bold-color">
 														<a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
