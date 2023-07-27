@@ -3,7 +3,9 @@
         <section class="page-info set-bg" data-image-src="<?=IMG.'page-info-bg-5.jpg'?>">
             <div class="section-header">
                 <h1 class="text-white"><?=$cat_['title']?></h1>
-                <span>~ Delicious food ~</span>
+                <?php if (!(empty($cat_['tag_line']))): ?>
+                    <span>~ <?=$cat_['tag_line']?> ~</span>
+                <?php endif ?>
             </div>
         </section>
 
@@ -11,56 +13,41 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="sorting">
-                            <form method="get" class="woocommerce-ordering">
-                                <p class="woocommerce-result-count">
-                                    Showing <?=count($products)?> results
-                                </p>
-                                <div class="form-holder">
-                                    <select name="orderby" class="orderby form-control">
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="rating">Sort by average rating</option>
-                                        <option value="date">Sort by newness</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
-                                    </select>
-                                    <span class="lnr lnr-chevron-down"></span>
-                                </div>
-                            </form>
-                        </div>
                         <div class="row products">
                             <?php foreach ($products as $key => $product): ?>
-                                <div class="col-md-4 col-lg-3 col-sm-6">
-                                    <div class="item">
-                                        <div class="thumb">
-                                            <a href="<?=BASEURL.'product/'.$product['slug']?>"
-                                                class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                                <img src="<?=UPLOADS.$product['image']?>" alt="<?=$product['title']?>">
-                                            </a>
-                                            <a href="#"
-                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                to cart</a>
-                                        </div>
-                                        <div class="info">
-                                            <h5 class="woocommerce-loop-product__title">
-                                                <a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
-                                            </h5>
-                                            <div class="star-rating">
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <i class="zmdi zmdi-star"></i>
-                                                <!-- <i class="zmdi zmdi-star-outline"></i> -->
-                                            </div>
+                                <div class="col-md-6 menu-holder">
+                                    <!-- <a href="<?=BASEURL.'product/'.$product['slug']?>" class="menu-thumb">
+                                        <img src="<?=UPLOADS.$product['image']?>" alt="<?=$product['title']?>">
+                                    </a> -->
+                                    <div class="menu-item">
+                                        <h5 class="bold-color">
+                                            <!-- <a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a> -->
+                                            <?=$product['title']?>
+                                            <span class="dots"></span>
                                             <span class="price">
-                                                <span class="woocommerce-Price-amount amount">
-                                                    <span class="woocommerce-Price-currencySymbol"><?=CURRENCY?></span><?=$product['price']?>
-                                                </span>
+                                                <span><?=CURRENCY?></span>
+                                                <?=$product['price']?>
                                             </span>
-                                        </div>
+                                        </h5>
+                                        <ul>
+                                            <li>
+                                                <?=$product['recipe']?>
+                                            </li>
+                                            <!-- <?php if ($product['small'] > 0): ?>
+                                                <li><a href="<?=BASEURL.'product/'.$product['slug'].'/small'?>">Small</a></li>
+                                            <?php endif ?>
+                                            <?php if ($product['medium'] > 0): ?>
+                                                <li><a href="<?=BASEURL.'product/'.$product['slug'].'/medium'?>">Medium</a></li>
+                                            <?php endif ?>
+                                            <?php if ($product['large'] > 0): ?>
+                                                <li><a href="<?=BASEURL.'product/'.$product['slug'].'/large'?>">Large</a></li>
+                                            <?php endif ?>
+                                            <?php if ($product['family'] > 0): ?>
+                                                <li><a href="<?=BASEURL.'product/'.$product['slug'].'/family'?>">Family</a></li>
+                                            <?php endif ?> -->
+                                        </ul>
                                     </div>
-                                </div><!-- /4 -->
+                                </div>
                             <?php endforeach ?>
                         </div>
                     </div>
