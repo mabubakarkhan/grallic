@@ -82,7 +82,7 @@
 					<div class="row row-lg">	
 		              	<div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
-								<h4 class="example-title">Slide</h4>
+								<h4 class="example-title">Slide (1920 x 925)</h4>
 								<div class="example">
 									<input type="file" id="input-file-now" data-plugin="dropify" data-default-file="<?=UPLOADS.$q['img']?>"/>
 									<input type="text" name="img" value="<?=$q['img']?>" hidden>

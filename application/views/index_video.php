@@ -1,80 +1,38 @@
 <main>
 
 		<div class="rev_slider_wrapper">
-			<div id="rev_slider_3" class="rev_slider" data-version="5.4.5">
+			<div id="rev_slider_4" class="rev_slider" data-version="5.4.5">
 				<ul>
-					<?php foreach ($slider as $key => $s): ?>
-						<li data-transition>
-							<img src="<?=UPLOADS.$s['img']?>" class="rev-slidebg" alt>
-							
-							<div class="tp-caption tp-resizeme caption-2"
-								data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-voffset="['-165', '-111', '-97', '-141', '-151']"
-								data-width="['auto']" data-height="['auto']" data-type="image">
-								<img src="<?=IMG?>logo.png" alt
-									data-ww="['103px', '103px', '103px', '103px', '103px']"
-									data-hh="['80px', '80px', '80px', '80px', '80px']">
-							</div>
-							
-							<div class="tp-caption tp-resizeme caption-4"
-								data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-fontsize="['67', '67', '67', '67', '67']"
-								data-voffset="['-42','12', '26', '-18', '-28']" data-lineheight="inherit" data-color="#fff">
-								<a href="<?=BASEURL.'product/'.$s['product_slug']?>" class="text-white"><?=$s['product']?></a>
-							</div>
-							<div class="tp-caption tp-resizeme caption-5"
-								data-frames="[{&quot;delay&quot;:3000,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:{-250,250};y:{-150,150};rX:{-90,90};rY:{-90,90};rZ:{-360,360};sX:0;sY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-fontsize="['27', '27', '27', '27', '45']"
-								data-voffset="['54','108', '122', '78', '68']" data-lineheight="inherit"
-								data-color="#ffcc66">
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-								<i class="zmdi zmdi-star"></i>
-							</div>
-							<div class="tp-caption tp-resizeme caption-6"
-								data-frames="[{&quot;delay&quot;:3200,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="middle" data-voffset="['98', '152', '166', '122', '112']"
-								data-width="['auto']" data-height="['auto']" data-type="image">
-								<img src="<?=IMG?>assure-food-quality.png" alt
-									data-ww="['300px', '300px', '300px', '300px', '300px']"
-									data-hh="['45px', '45px', '45px', '45px', '45px']">
-							</div>
-							<div class="tp-caption tp-resizeme caption-form"
-								data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="center" data-y="bottom" data-voffset="['143','93', '73', '78', '73']"
-								data-lineheight="inherit" data-width="['991', '991', '891', '991', '991']"
-								data-visibility="[&quot;on&quot;, &quot;off&quot;, &quot;off&quot;, &quot;off&quot;, &quot;off&quot;]">
-							</div>
-							<div class="tp-caption tp-resizeme caption-pointer"
-								data-frames="[{&quot;delay&quot;:0,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="left" data-y="middle" data-fontsize="['25', '25', '25', '30', '50']"
-								data-hoffset="['80','40', '40', '40', '20']" data-lineheight="inherit" data-color="#fff"
-								data-visibility="[&quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;off&quot;]"
-								data-actions="[{
-									&quot;event&quot;: &quot;click&quot;, 
-									&quot;action&quot;: &quot;jumptoslide&quot;, 
-									&quot;slide&quot;: &quot;previous&quot;, 
-									&quot;delay&quot;: &quot;0&quot;
-								}]">
-								<span class="lnr lnr-arrow-left"></span>
-							</div>
-							<div class="tp-caption tp-resizeme caption-pointer"
-								data-frames="[{&quot;delay&quot;:0,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-								data-x="right" data-y="middle" data-fontsize="['25', '25', '25', '30', '50']"
-								data-hoffset="['80','40', '40', '40', '20']" data-lineheight="inherit" data-color="#fff"
-								data-visibility="[&quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;on&quot;, &quot;off&quot;]"
-								data-actions="[{
-									&quot;event&quot;: &quot;click&quot;, 
-									&quot;action&quot;: &quot;jumptoslide&quot;, 
-									&quot;slide&quot;: &quot;next&quot;, 
-									&quot;delay&quot;: &quot;0&quot;
-								}]">
-								<span class="lnr lnr-arrow-right"></span>
-							</div>
-						</li>
-					<?php endforeach ?>
+					<li data-transition>
+						<img src="<?=IMG?>slideshow-5.jpg" class="rev-slidebg" alt>
+						<div class="tp-caption tp-resizeme caption-1"
+							data-frames="[{&quot;delay&quot;:500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:-20px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+							data-x="center" data-y="middle" data-fontsize="['22', '22', '22', '22', '22']"
+							data-voffset="['-64','-77', '-72', '-113', '-113']" data-lineheight="inherit"
+							data-color="#ccc">
+							Because you deserve to enjoy the best
+						</div>
+						<div class="tp-caption tp-resizeme caption-2"
+							data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:-20px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+							data-x="center" data-y="middle" data-fontsize="['99', '99', '99', '99', '99']"
+							data-voffset="['16','3', '8', '-33', '-33']" data-lineheight="inherit" data-color="#fff">
+							nice dinner
+						</div>
+						<div class="tp-caption tp-resizeme caption-3"
+							data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:20px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+							data-x="center" data-y="middle" data-voffset="['142','129', '134', '93', '93']"
+							data-width="['auto']" data-height="['auto']" data-type="image">
+							<img src="<?=IMG?>cuisine-1956.png" alt
+								data-ww="['320px', '320px', '320px', '320px', '320px']"
+								data-hh="['59px', '59px', '59px', '59px', '59px']">
+						</div>
+						<div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
+							data-videowidth="100%" data-videoheight="100%" data-ytid="<?=$setting['slider_video_id']?>" data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&
+     						origin=http://www.youtube.com/" data-videopreload="auto" data-videorate="1" data-forcecover="1"
+							data-videoloop="loopandnoslidestop" data-aspectratio="16:9" data-videostartat="00:04"
+							data-videoendat="02:08" data-autoplay="on" data-autoplayonlyfirsttime="true">
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>

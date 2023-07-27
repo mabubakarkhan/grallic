@@ -93,7 +93,7 @@ else
 {
 	define('BASEURL', 'https://olympiareception.com/');
 }
-define('APP_TITLE', 'Grallic');
+define('APP_TITLE', 'Olympia Reception');
 define('ASSET', BASEURL.'asset/');
 define('CSS', BASEURL.'asset/css/');
 define('JS', BASEURL.'asset/js/');
@@ -103,7 +103,7 @@ define('GLOBAL_', BASEURL.'asset/global/');
 define('VENDOR', BASEURL.'asset/vendor/');
 define('FONTS', BASEURL.'asset/fonts/');
 
-define('CURRENCY', '$');
+define('CURRENCY', '£');
 function redirect($link) {
 	header("location:".BASEURL . trim($link));
 	die();

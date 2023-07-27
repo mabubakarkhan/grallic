@@ -196,6 +196,23 @@ class Admin extends CI_Controller {
 		$data['cats'] = $this->model->get_cats($status);
 		$this->template('admin/cats',$data);
 	}
+	public function deals($status = 'all')
+	{
+		$user = $this->check_login();
+		$data['page_title'] = $status.' deals';
+		$data['page_active'] = $status.'_deals';
+		$data['cats'] = $this->model->get_deals($status);
+		$this->template('admin/deals',$data);
+	}
+	public function deal_items($deal_id)
+	{
+		$user = $this->check_login();
+		$data['deal'] = $this->model->get_deal_byid($deal_id);
+		$data['page_title'] = $data['deal']['status'].' deals';
+		$data['page_active'] = $data['deal']['status'].'_deals';
+		$data['items'] = $this->model->deal_items($deal_id);
+		$this->template('admin/deal_items',$data);
+	}
 	//PRODUCTs
 	public function products()
 	{
@@ -291,6 +308,13 @@ class Admin extends CI_Controller {
 		$data['page_active'] = 'add_category';
 		$this->template('admin/add_cat',$data);
 	}
+	public function add_deal()
+	{
+		$user = $this->check_login();
+		$data['page_title'] = 'Add Deal';
+		$data['page_active'] = 'add_deal';
+		$this->template('admin/add_deal',$data);
+	}
 	public function add_product()
 	{
 		$user = $this->check_login();
@@ -355,6 +379,24 @@ class Admin extends CI_Controller {
 		$user = $this->check_login();
 		$this->db->insert('category',$_POST);
 		redirect("admin/cats/".$_POST['status']."/?msg=Category Added!");
+	}
+	public function post_deal()
+	{
+		$user = $this->check_login();
+		$this->db->insert('deal',$_POST);
+		redirect("admin/deals/".$_POST['status']."/?msg=Deal Added!");
+	}
+	public function post_deal_item($id)
+	{
+		$this->db->where('deal_id',$id)->delete('deal_item');
+		foreach ($_POST['deal_id'] as $key => $q) {
+			$insert['deal_id'] = $q;
+			$insert['qty'] = $_POST['qty'][$key];
+			$insert['title'] = $_POST['title'][$key];
+			$insert['title_fr'] = $_POST['title_fr'][$key];
+			$this->db->insert('deal_item',$insert);
+		}
+		redirect("admin/deal-items/".$id);
 	}
 	public function post_product()
 	{
@@ -461,6 +503,27 @@ class Admin extends CI_Controller {
 			$data['page_title'] = 'Edit Category';
 			$data['page_active'] = $data['q']['status'].'_cats';
 			$this->template('admin/add_cat',$data);
+		}
+	}
+	public function edit_deal()
+	{
+		$user = $this->check_login();
+		$new_id = isset($_GET['id']) ? $_GET['id'] : 0;
+		if($new_id < 1) 
+		{
+			echo json_encode("Wrong Deal ID has been passed");
+		}
+		else 
+		{
+			$data['q'] = $this->model->get_deal_byid($new_id);
+			if (!($data['q'])) {
+				redirect('admin/logout');
+			}
+			$data['mode'] = "edit";
+			$data['signin'] = FALSE;
+			$data['page_title'] = 'Edit Deal';
+			$data['page_active'] = $data['q']['status'].'_deals';
+			$this->template('admin/add_deal',$data);
 		}
 	}
 	public function edit_product()
@@ -615,6 +678,22 @@ class Admin extends CI_Controller {
 		else
 		{
 			redirect("admin/edit-cat/?id=".$aid."&msg=Error occured while Editing Category");
+		}
+	}
+	public function update_deal()
+	{
+		$user = $this->check_login();
+		$aid = $_POST['aid'];
+		unset($_POST['aid'], $_POST['mode'], $_POST['security']);
+		$this->db->where('deal_id', $aid);
+		$data = $this->db->update('deal', $_POST);
+		if($data)
+		{
+			redirect("admin/deals/".$_POST['status']."/?msg=Edited Deal");
+		}
+		else
+		{
+			redirect("admin/edit-deal/?id=".$aid."&msg=Error occured while Editing Deal");
 		}
 	}
 	public function update_product()
@@ -899,6 +978,21 @@ class Admin extends CI_Controller {
 			$update['status'] = $_POST['status'];
 			$this->db->where('category_id',$_POST['id']);
 			$resp = $this->db->update('category',$update);
+			if ($resp) {
+				echo json_encode(array("status"=>true,"msg"=>"changed."));
+			}
+			else{
+				echo json_encode(array("status"=>false,"msg"=>"not changed, please try again or reload your web page."));
+			}
+		}
+	}
+	public function change_deal_status()
+	{
+		$user = $this->check_login();
+		if ($_POST) {
+			$update['status'] = $_POST['status'];
+			$this->db->where('deal_id',$_POST['id']);
+			$resp = $this->db->update('deal',$update);
 			if ($resp) {
 				echo json_encode(array("status"=>true,"msg"=>"changed."));
 			}

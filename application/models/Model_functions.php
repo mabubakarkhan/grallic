@@ -100,6 +100,23 @@ class Model_functions extends CI_Model {
 	{
 		return $this->get_row("SELECT * FROM `category` WHERE `category_id` = '$id';");
 	}
+	public function get_deals($status)
+	{
+		if ($status == 'all') {
+			return $this->get_results("SELECT * FROM `deal` ORDER BY `title` ASC;");
+		}
+		else{
+			return $this->get_results("SELECT * FROM `deal` WHERE `status` = '$status' ORDER BY `title` ASC;");
+		}
+	}
+	public function get_deal_byid($id)
+	{
+		return $this->get_row("SELECT * FROM `deal` WHERE `deal_id` = '$id';");
+	}
+	public function deal_items($deal)
+	{
+		return $this->get_results("SELECT * FROM `deal_item` WHERE `deal_id` = '$deal';");
+	}
 	//Products
 	public function get_products()
 	{

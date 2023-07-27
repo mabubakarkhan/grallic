@@ -19,7 +19,8 @@
                                     </a> -->
                                     <div class="menu-item">
                                         <h5 class="bold-color">
-                                            <a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a>
+                                            <!-- <a href="<?=BASEURL.'product/'.$product['slug']?>"><?=$product['title']?></a> -->
+                                            <?=$product['title']?>
                                             <span class="dots"></span>
                                             <span class="price">
                                                 <span><?=CURRENCY?></span>

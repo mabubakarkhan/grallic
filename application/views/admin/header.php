@@ -338,6 +338,37 @@
               </ul>
             </li>
 
+            <!-- Deals  -->
+              <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                <span class="site-menu-title">Deals</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li rel="all_deals" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/deals/all'?>">
+                    <span class="site-menu-title">All</span>
+                  </a>
+                </li>
+                <li rel="active_deals" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/deals/active'?>">
+                    <span class="site-menu-title">Active</span>
+                  </a>
+                </li>
+                <li rel="inactive_deals" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/deals/inactive'?>">
+                    <span class="site-menu-title">Inactive</span>
+                  </a>
+                </li>
+                <li rel="add_deal" class="site-menu-item">
+                  <a class="animsition-link" href="<?=BASEURL.'admin/add-deal'?>">
+                    <span class="site-menu-title">+Add</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
             <!-- Products  -->
               <li class="site-menu-item has-sub">
               <a href="javascript:void(0)">
