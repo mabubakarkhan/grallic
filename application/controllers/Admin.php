@@ -267,6 +267,14 @@ class Admin extends CI_Controller {
 		$data['data'] = $this->model->get_slider('all');
 		$this->template('admin/sliders',$data);
 	}
+	public function mariage_slider()
+	{
+		$user = $this->check_login();
+		$data['page_title'] = "Mariage Slider";
+		$data['page_active'] = 'mariage_slider';
+		$data['data'] = $this->model->get_mariage_slider();
+		$this->template('admin/mariage_slider',$data);
+	}
 	public function blog()
 	{
 		$user = $this->check_login();
@@ -284,6 +292,15 @@ class Admin extends CI_Controller {
 		$data['menu'] = 'service_box';
 		$data['service_boxs'] = $this->model->service_boxs();
 		$this->template('admin/service_boxs', $data);
+	}
+	public function mariage_services()
+	{
+		$user = $this->check_login();
+		$data['title'] = "Admin Panel";
+		$data['page_title'] = 'Mariage Services';
+		$data['menu'] = 'mariage_services';
+		$data['mariage_services'] = $this->model->mariage_services();
+		$this->template('admin/mariage_services', $data);
 	}
 	public function gallery()
 	{
@@ -366,6 +383,13 @@ class Admin extends CI_Controller {
 		$data['page_title'] = 'Add Service Box';
 		$data['menu'] = 'blog';
 		$this->template('admin/add_service_box', $data);
+	}
+	public function add_mariage_service()
+	{
+		$user = $this->check_login();
+		$data['page_title'] = 'Add Mariage Service';
+		$data['menu'] = 'blog';
+		$this->template('admin/add_mariage_service', $data);
 	}
 	/**
 	*
@@ -451,6 +475,12 @@ class Admin extends CI_Controller {
 		$resp = $this->db->insert("service_box", $_POST);
 		redirect("admin/service-boxs/?msg=Service Box Added!");
 	}
+	public function post_mariage_service()
+	{
+		$user = $this->check_login();
+		$resp = $this->db->insert("mariage_service", $_POST);
+		redirect("admin/mariage-services/?msg=Mariage Service Added!");
+	}
 	public function post_gallery()
 	{
 		$user = $this->check_login();
@@ -472,10 +502,37 @@ class Admin extends CI_Controller {
 	    	if ($resp) {
 	        	$this->upload->do_upload('file');
 				$insert['image'] = $this->upload->data()['file_name'];
+				$insert['type'] = $_POST['type'];
 				$this->db->insert("gallery", $insert);
 	    	}
 		}
 		redirect("admin/gallery/?msg=Photos Added!");
+	}
+	public function post_mariage_slider()
+	{
+		$user = $this->check_login();
+		foreach($_FILES["image"]["tmp_name"] as $key => $img) {
+
+			$_FILES['file']['name']       = $_FILES['image']['name'][$key];
+            $_FILES['file']['type']       = $_FILES['image']['type'][$key];
+            $_FILES['file']['tmp_name']   = $_FILES['image']['tmp_name'][$key];
+            $_FILES['file']['error']      = $_FILES['image']['error'][$key];
+            $_FILES['file']['size']       = $_FILES['image']['size'][$key];
+
+			$config['upload_path'] = 'uploads/';
+	    	$config['allowed_types'] = 'jpg|png|jpeg|PNG|JPEG|JPG';
+	    	$config['encrypt_name'] = TRUE;
+	    	$ext = pathinfo($_FILES["file"]['name'], PATHINFO_EXTENSION);
+			$new_name = md5(time().$_FILES["file"]['name']).'.'.$ext;
+			$config['file_name'] = $new_name;
+	    	$resp = $this->load->library('upload', $config);
+	    	if ($resp) {
+	        	$this->upload->do_upload('file');
+				$insert['slide'] = $this->upload->data()['file_name'];
+				$this->db->insert("mariage_slider", $insert);
+	    	}
+		}
+		redirect("admin/mariage-slider/?msg=Slide Added!");
 	}
 	/**
 	*
@@ -657,6 +714,24 @@ class Admin extends CI_Controller {
 			$this->template('admin/add_service_box', $data);
 		}
 	}
+
+	public function edit_mariage_service()
+	{
+		$user = $this->check_login();
+		$new_id = isset($_GET['id']) ? $_GET['id'] : 0;
+		if($new_id < 1) 
+		{
+			echo ("Wrong Service Box ID has been passed");
+		}
+		else 
+		{
+			$data['q'] = $this->model->get_mariage_service_byid($new_id);
+			$data['page_title'] = "Edit: Mariage Service";
+			$data['mode'] = "edit";
+			$data['menu'] = 'mariage_services';
+			$this->template('admin/add_mariage_service', $data);
+		}
+	}
 	/**
 	*
 
@@ -802,11 +877,28 @@ class Admin extends CI_Controller {
 		$data = $this->db->update("service_box", $_POST);
 		if($data)
 		{
-			redirect("admin/service-boxs/?msg=Edited service box Post");
+			redirect("admin/service-boxs/?msg=Edited service box");
 		}
 		else
 		{
 			redirect("admin/service-boxs/?error=1&msg=Error occured while Editing service box");
+		}
+	}
+	public function update_mariage_service()
+	{
+		$user = $this->check_login();
+		$aid = $_POST['aid'];
+		unset($_POST['aid'], $_POST['mode'], $_POST['security']);
+		$_POST['updated_at'] = date('Y-m-d H:i:s');
+		$this->db->where("mariage_service_id",$aid);
+		$data = $this->db->update("mariage_service", $_POST);
+		if($data)
+		{
+			redirect("admin/mariage-services/?msg=Edited Mariage Service");
+		}
+		else
+		{
+			redirect("admin/mariage-services/?error=1&msg=Error occured while Editing Mariage Service");
 		}
 	}
 	/**
@@ -900,6 +992,20 @@ class Admin extends CI_Controller {
 			redirect("admin/service-boxs/?error=1&msg=Service box has failed to delete. Try Again!");
 		}
 	}
+	public function delete_mariage_service()
+	{
+		$user = $this->check_login();
+		$this->db->where('mariage_service_id', $_GET['id']);
+		$resp = $this->db->delete('mariage_service');
+		if($resp)
+		{
+			redirect("admin/mariage-services/?msg=Mariage Service has Deleted");
+		}
+		else
+		{
+			redirect("admin/mariage-services/?error=1&msg=Mariage Service has failed to delete. Try Again!");
+		}
+	}
 	public function delete_gallery()
 	{
 		$user = $this->check_login();
@@ -914,6 +1020,22 @@ class Admin extends CI_Controller {
 		else
 		{
 			redirect("admin/gallery?error=1&msg=Photo has failed to delete. Try Again!");
+		}
+	}
+	public function delete_mariage_slider()
+	{
+		$user = $this->check_login();
+		$photo = $this->model->get_row("SELECT `slide` FROM `mariage_slider` WHERE `mariage_slider_id` = '".$_GET['id']."';");
+		$this->db->where('mariage_slider_id', $_GET['id']);
+		$resp = $this->db->delete('mariage_slider');
+		if($resp)
+		{
+			unlink('uploads/'.$photo['slide']);
+			redirect("admin/mariage-slider?msg=Slide has Deleted");
+		}
+		else
+		{
+			redirect("admin/mariage-slider?error=1&msg=Slide has failed to delete. Try Again!");
 		}
 	}
 	/**

@@ -308,7 +308,7 @@
 			</div>
 		</section>
 
-		<section class="section-primary event pb-120">
+		<section class="section-primary event">
 			<div class="container">
 				<div class="section-header">
 					<h2>Upcoming events</h2>
@@ -347,6 +347,39 @@
 							</div>
 						</div>
 					<?php endforeach ?>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-primary pb-120 gallery">
+			<div class="container">
+				<div class="section-header">
+					<h2>Gallery</h2>
+					<span>~ see our gallery ~</span>
+				</div>
+				<div class="row">
+                    <?php foreach ($gallery as $key => $photo): ?>
+                    	<?php if ($key == 8): ?>
+                    		<?php break ?>
+                    	<?php endif ?>
+                    	<?php if ($photo['type'] == 'gallery'): ?>
+	                        <div class="col-md-3">
+	                            <a href="<?=UPLOADS.$photo['image']?>" class="image-holder" target="_blank">
+	                                <div class="gallery-img"><img src="<?=UPLOADS.$photo['image']?>"></div><!-- /gallery-img -->
+	                                <div class="frame"></div>
+	                                <div class="inner">
+	                                    <div class="info">
+	                                        <h6>Click</h6>
+	                                        <span>View Full</span>
+	                                    </div>
+	                                </div>
+	                            </a>
+	                        </div>
+                    	<?php endif ?>
+                    <?php endforeach ?>
+                    <div class="col-md-12" align="center">
+			             <a href="<?=BASEURL.'gallery'?>" class="au-btn__readmore color-36">View Full Gallery</a> 
+                    </div>
 				</div>
 			</div>
 		</section>

@@ -24,18 +24,20 @@
             <div class="container">
                 <div class="row">
                     <?php foreach ($gallery as $key => $photo): ?>
-                        <div class="col-md">
-                            <a href="<?=UPLOADS.$photo['image']?>" class="image-holder" target="_blank">
-                                <div class="gallery-img"><img src="<?=UPLOADS.$photo['image']?>"></div><!-- /gallery-img -->
-                                <div class="frame"></div>
-                                <div class="inner">
-                                    <div class="info">
-                                        <h6>Click</h6>
-                                        <span>View Full</span>
+                        <?php if ($photo['type'] == 'gallery'): ?>
+                            <div class="col-md-3">
+                                <a href="<?=UPLOADS.$photo['image']?>" class="image-holder" target="_blank">
+                                    <div class="gallery-img"><img src="<?=UPLOADS.$photo['image']?>"></div><!-- /gallery-img -->
+                                    <div class="frame"></div>
+                                    <div class="inner">
+                                        <div class="info">
+                                            <h6>Click</h6>
+                                            <span>View Full</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        <?php endif ?>
                     <?php endforeach ?>
                 </div><!-- /row -->
             </div>

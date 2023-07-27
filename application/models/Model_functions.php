@@ -324,4 +324,16 @@ class Model_functions extends CI_Model {
 	{
 		return $this->get_results("SELECT * FROM `gallery` ORDER BY `gallery_id` ASC;");
 	}
+	public function get_mariage_slider()
+	{
+		return $this->get_results("SELECT * FROM `mariage_slider` ORDER BY `mariage_slider_id` ASC;");
+	}
+	public function mariage_services()
+	{
+		return $this->get_results("SELECT * FROM `mariage_service` ORDER BY `mariage_service_id` ASC;");
+	}
+	public function get_mariage_service_byid($id)
+	{
+		return $this->get_row("SELECT * FROM `mariage_service` WHERE `mariage_service_id` = '$id';");
+	}
 }

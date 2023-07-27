@@ -1,8 +1,8 @@
 <script type="text/javascript">
     function del_q(photo_id) {
-        cnfr = confirm("Are you sure you want to delete this Photo");
+        cnfr = confirm("Are you sure you want to delete this Slide");
         if (cnfr) {
-            document.location = "<?=BASEURL?>admin/delete-gallery?id=" + photo_id;
+            document.location = "<?=BASEURL?>admin/delete-mariage-slider?id=" + photo_id;
         }
     }
 </script>
@@ -42,27 +42,24 @@
                 <table class="table table-bordered table-hover dataTable table-striped width-full" data-plugin="dataTable">
                     <thead>
                         <tr>
-                            <th>Photo</th>
-                            <th>Type</th>
+                            <th>Slide</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Photo</th>
-                            <th>Type</th>
+                            <th>Slide</th>
                             <th>Delete</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <?php
-                        if (count($gallery) > 0) {
-                            foreach ($gallery as $q): ?>
+                        if (count($data) > 0) {
+                            foreach ($data as $q): ?>
                                 <tr>
-                                    <td><img src="<?=UPLOADS.$q['image']?>" width="100"></td>
-                                    <td><?=$q['type']?></td>
+                                    <td><img src="<?=UPLOADS.$q['slide']?>" width="100"></td>
                                     <td class="actions">
-                                        <a href="javascript:del_q('<?=$q['gallery_id']?>')" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"
+                                        <a href="javascript:del_q('<?=$q['mariage_slider_id']?>')" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"
                                         data-toggle="tooltip" data-original-title="Remove"><i class="icon md-delete" aria-hidden="true"></i></a>
                                     </td>
                                 </tr>
@@ -72,9 +69,8 @@
                             ?>
                             <tr>
                                 <td>
-                                    No Photo found in the database
+                                    No Slide found in the database
                                 </td>
-                                <td></td>
                                 <td></td>
                             </tr>
                             <?php
@@ -92,18 +88,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add Photos</h4>
+                <h4 class="modal-title">Add Slides</h4>
             </div><!-- /modal-header -->
             <div class="modal-body">
 
-                <form action="<?=BASEURL.'admin/post-gallery'?>" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label>Type</label>
-                        <select name="type" class="form-control" required>
-                            <option value="gallery" selected>Gallery</option>
-                            <option value="mariage">Mariage</option>
-                        </select>
-                    </div><!-- /form-group -->
+                <form action="<?=BASEURL.'admin/post-mariage-slider'?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Photos</label>
                         <input type="file" multiple name="image[]" required="required">

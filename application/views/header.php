@@ -117,9 +117,9 @@
 						Events
 					</a>
 				</li>
-				<li class="<?=$gallery_nav?>">
-					<a href="<?=BASEURL.'gallery'?>">
-						Gallery
+				<li class="<?=$mariage_nav?>">
+					<a href="<?=BASEURL.'mariage'?>">
+						Mariages
 					</a>
 				</li>
 				<li class="<?=$about_us_nav?>">
@@ -309,9 +309,9 @@
 							Events
 						</a>
 					</li>
-					<li class="<?=$gallery_nav?>">
-						<a href="<?=BASEURL.'gallery'?>">
-							Gallery
+					<li class="<?=$mariage_nav?>">
+						<a href="<?=BASEURL.'mariage'?>">
+							Mariages
 						</a>
 					</li>
 					<li class="<?=$about_us_nav?>">

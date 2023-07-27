@@ -45,6 +45,7 @@ $route['404_override'] = '';
 $route["home"] = 'Home/index';
 $route["index"] = 'Home/index';
 $route["index2"] = 'Home/index2';
+$route["mariage"] = 'Home/mariage';
 $route["about-us"] = 'Home/about_us';
 $route["contact-us"] = 'Home/contact_us';
 $route["events"] = 'Home/events';
