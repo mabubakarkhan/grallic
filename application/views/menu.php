@@ -51,4 +51,82 @@
         <?php endif ?>
     <?php endforeach ?>
 
+
+    <?php if ($deals): ?>
+        <section class="section-primary pb-120">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Deals</h2>
+                    <span>~ our deals ~</span>
+                </div>
+                <div class="row">
+                    <?php foreach ($deals as $key => $deal): ?>
+                        <div class="col-md-4">
+                            <div class="deal-box">
+                                <div class="head">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6"><span><?=$deal['title']?></span></div>
+                                        <div class="col-md-6 col-sm-6" align="right"><span><?=$deal['price']?></span></div>
+                                    </div><!-- {row} -->
+                                </div>
+                                <div class="items">
+                                    <ul>
+                                        <?php
+                                        $items = $this->db->select('title')->select('qty')
+                                        ->from('deal_item')
+                                        ->where('deal_id',$deal['deal_id'])
+                                        ->get();
+                                        if ($items->num_rows() > 0) {
+                                            foreach ($items->result_array() as $key => $item) {
+                                            ?>
+                                                <li>
+                                                    <?=$item['qty'].' '.$item['title']?>
+                                                    <span class="line"></span>
+                                                </li>
+                                            <?php
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div><!-- /deal-box -->
+                        </div><!-- /4 -->
+                    <?php endforeach ?>
+                </div><!-- /row -->
+            </div>
+        </section>
+    <?php endif ?>
+
 </main>
+
+
+<style>
+.deal-box{
+    border: 2px solid #cdaa7c;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.deal-box .head {
+    background: #cdaa7c;
+    padding: 5px;
+}
+.deal-box .head span{
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.deal-box .items{
+    text-align: center;
+    padding: 20px;
+}
+.deal-box .items ul li .line{
+    display: block;
+    width: 30%;
+    border-bottom: 1px solid #cdaa7c;
+    margin: 7px auto;
+}
+.deal-box .items ul li:last-child > .line{
+    display: none;
+}
+</style>

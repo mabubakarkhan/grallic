@@ -181,6 +181,7 @@ class Home extends CI_Controller {
 		$data['meta_desc'] = 'Menu';
 		$data['open_graph'] = 'Menu';
 		$data['products'] = $this->model->get_non_deal_products();
+		$data['deals'] = $this->model->get_deals('active');
 		$this->template('menu',$data);
 	}
 	public function pdf()
