@@ -102,6 +102,7 @@
                         <select name="type" class="form-control" required>
                             <option value="gallery" selected>Gallery</option>
                             <option value="mariage">Mariage</option>
+                            <option value="catering">Catering</option>
                         </select>
                     </div><!-- /form-group -->
                     <div class="form-group">

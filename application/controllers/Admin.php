@@ -270,7 +270,7 @@ class Admin extends CI_Controller {
 	public function mariage_slider()
 	{
 		$user = $this->check_login();
-		$data['page_title'] = "Mariage Slider";
+		$data['page_title'] = "Mariage/Catering Slider";
 		$data['page_active'] = 'mariage_slider';
 		$data['data'] = $this->model->get_mariage_slider();
 		$this->template('admin/mariage_slider',$data);
@@ -297,7 +297,7 @@ class Admin extends CI_Controller {
 	{
 		$user = $this->check_login();
 		$data['title'] = "Admin Panel";
-		$data['page_title'] = 'Mariage Services';
+		$data['page_title'] = 'Services';
 		$data['menu'] = 'mariage_services';
 		$data['mariage_services'] = $this->model->mariage_services();
 		$this->template('admin/mariage_services', $data);
@@ -387,7 +387,7 @@ class Admin extends CI_Controller {
 	public function add_mariage_service()
 	{
 		$user = $this->check_login();
-		$data['page_title'] = 'Add Mariage Service';
+		$data['page_title'] = 'Add Service';
 		$data['menu'] = 'blog';
 		$this->template('admin/add_mariage_service', $data);
 	}
@@ -479,7 +479,7 @@ class Admin extends CI_Controller {
 	{
 		$user = $this->check_login();
 		$resp = $this->db->insert("mariage_service", $_POST);
-		redirect("admin/mariage-services/?msg=Mariage Service Added!");
+		redirect("admin/mariage-services/?msg=Service Added!");
 	}
 	public function post_gallery()
 	{
@@ -529,6 +529,7 @@ class Admin extends CI_Controller {
 	    	if ($resp) {
 	        	$this->upload->do_upload('file');
 				$insert['slide'] = $this->upload->data()['file_name'];
+				$insert['type'] = $_POST['type'];
 				$this->db->insert("mariage_slider", $insert);
 	    	}
 		}
@@ -726,7 +727,7 @@ class Admin extends CI_Controller {
 		else 
 		{
 			$data['q'] = $this->model->get_mariage_service_byid($new_id);
-			$data['page_title'] = "Edit: Mariage Service";
+			$data['page_title'] = "Edit: Service";
 			$data['mode'] = "edit";
 			$data['menu'] = 'mariage_services';
 			$this->template('admin/add_mariage_service', $data);
@@ -894,11 +895,11 @@ class Admin extends CI_Controller {
 		$data = $this->db->update("mariage_service", $_POST);
 		if($data)
 		{
-			redirect("admin/mariage-services/?msg=Edited Mariage Service");
+			redirect("admin/mariage-services/?msg=Edited Service");
 		}
 		else
 		{
-			redirect("admin/mariage-services/?error=1&msg=Error occured while Editing Mariage Service");
+			redirect("admin/mariage-services/?error=1&msg=Error occured while Editing Service");
 		}
 	}
 	/**
@@ -999,11 +1000,11 @@ class Admin extends CI_Controller {
 		$resp = $this->db->delete('mariage_service');
 		if($resp)
 		{
-			redirect("admin/mariage-services/?msg=Mariage Service has Deleted");
+			redirect("admin/mariage-services/?msg=Service has Deleted");
 		}
 		else
 		{
-			redirect("admin/mariage-services/?error=1&msg=Mariage Service has failed to delete. Try Again!");
+			redirect("admin/mariage-services/?error=1&msg=Service has failed to delete. Try Again!");
 		}
 	}
 	public function delete_gallery()

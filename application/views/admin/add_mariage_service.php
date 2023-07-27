@@ -52,6 +52,25 @@
 					</div><!-- /form-horizontal -->
 
 					<div class="col-lg-12 form-horizontal">
+						<div class="form-group form-material">
+							<label class="col-lg-12 col-sm-3 control-label">Type
+								<span class="required">*</span>
+							</label>
+							<div class=" col-lg-12 col-sm-9">
+								<select name="type" class="form-control" required>
+									<?php if ($q['type'] == 'catering'): ?>
+										<option value="mariage">Mariage</option>
+			                            <option value="catering" selected>Catering</option>
+									<?php else: ?>
+			                            <option value="mariage" selected>Mariage</option>
+			                            <option value="catering">Catering</option>
+									<?php endif ?>
+		                        </select>
+							</div><!-- /12 -->
+						</div><!-- /form-group -->
+					</div><!-- /form-horizontal -->
+
+					<div class="col-lg-12 form-horizontal">
 		            	<div class="form-group form-material">
 							<label class="col-lg-12 col-sm-3 control-label">Detail
 								<span class="required">*</span>

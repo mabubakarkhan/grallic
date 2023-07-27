@@ -29,6 +29,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Type</th>
                             <th>People</th>
                             <th>Date</th>
                             <th>Time</th>
@@ -41,6 +42,7 @@
                     <tfoot>
                         <tr>
                             <th>#</th>
+                            <th>Type</th>
                             <th>People</th>
                             <th>Date</th>
                             <th>Time</th>
@@ -56,6 +58,7 @@
                             foreach ($reservations as $q): ?>
                                 <tr>
                                     <td><?=$q['reservation_id']?></td>
+                                    <td><?=$q['type']?></td>
                                     <td><?=$q['people']?></td>
                                     <td><?=$q['date_at']?></td>
                                     <td><?=$q['time_at']?></td>
@@ -79,6 +82,7 @@
                                 <td>
                                     No Reservation found in the database
                                 </td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

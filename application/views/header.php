@@ -7,7 +7,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title><?=APP_TITLE?></title>
+	<title><?=$meta_title?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="<?=FONTS?>linearicons/style.css">
@@ -118,7 +118,7 @@
 					</a>
 				</li>
 				<li class="<?=$mariage_nav?>">
-					<a href="<?=BASEURL.'mariage'?>">
+					<a href="<?=BASEURL.'marriage'?>">
 						Mariages
 					</a>
 				</li>
@@ -127,9 +127,9 @@
 						About Us
 					</a>
 				</li>
-				<li class="<?=$contact_us_nav?>">
-					<a href="<?=BASEURL.'contact-us'?>">
-						Contact Us
+				<li class="<?=$catering_nav?>">
+					<a href="<?=BASEURL.'catering'?>">
+						Catering
 					</a>
 				</li>
 			</ul>
@@ -310,7 +310,7 @@
 						</a>
 					</li>
 					<li class="<?=$mariage_nav?>">
-						<a href="<?=BASEURL.'mariage'?>">
+						<a href="<?=BASEURL.'marriage'?>">
 							Mariages
 						</a>
 					</li>
@@ -319,9 +319,9 @@
 							About Us
 						</a>
 					</li>
-					<li class="<?=$contact_us_nav?>">
-						<a href="<?=BASEURL.'Contact-us'?>">
-							Contact Us
+					<li class="<?=$catering_nav?>">
+						<a href="<?=BASEURL.'catering'?>">
+							Catering
 						</a>
 					</li>
 				</ul>

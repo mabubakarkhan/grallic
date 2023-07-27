@@ -8,7 +8,7 @@
                     <span>~ <?=$cat['tag_line']?> ~</span>
                 </div>
             </section>
-            <section class="section-primary menu-page pb-120">
+            <section class="section-primary menu-page">
                 <div class="container">
                     <div class="row">
                         <?php foreach ($products as $key_ => $product): ?>
@@ -98,35 +98,3 @@
     <?php endif ?>
 
 </main>
-
-
-<style>
-.deal-box{
-    border: 2px solid #cdaa7c;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-.deal-box .head {
-    background: #cdaa7c;
-    padding: 5px;
-}
-.deal-box .head span{
-    color: #fff;
-    font-weight: 100;
-    font-size: 20px;
-    text-transform: uppercase;
-}
-.deal-box .items{
-    text-align: center;
-    padding: 20px;
-}
-.deal-box .items ul li .line{
-    display: block;
-    width: 30%;
-    border-bottom: 1px solid #cdaa7c;
-    margin: 7px auto;
-}
-.deal-box .items ul li:last-child > .line{
-    display: none;
-}
-</style>

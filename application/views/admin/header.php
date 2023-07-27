@@ -464,13 +464,13 @@
             <li rel="mariage_slider" class="site-menu-item">
               <a class="animsition-link" href="<?=BASEURL.'admin/mariage-slider/'?>">
                 <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                <span class="site-menu-title">Slider Mariage</span>
+                <span class="site-menu-title">Slider Mariage/Catering</span>
               </a>
             </li>
             <li rel="mariage_services" class="site-menu-item">
               <a class="animsition-link" href="<?=BASEURL.'admin/mariage-services/'?>">
                 <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
-                <span class="site-menu-title">Mariage Services</span>
+                <span class="site-menu-title">Services</span>
               </a>
             </li>
             <li rel="blog" class="site-menu-item">

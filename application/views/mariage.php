@@ -4,6 +4,9 @@
         <div id="rev_slider_3" class="rev_slider" data-version="5.4.5">
             <ul>
                 <?php foreach ($slides as $key => $s): ?>
+                    <?php if ($s['type'] != 'mariage'): ?>
+                        <?php continue; ?>
+                    <?php endif ?>
                     <li data-transition>
                         <img src="<?=UPLOADS.$s['slide']?>" class="rev-slidebg" alt>
                         <div class="tp-caption tp-resizeme caption-pointer"
@@ -79,6 +82,9 @@
         <section class="about-us">
             <div class="container">
                 <?php foreach ($services as $key => $service): ?>
+                    <?php if ($service['type'] != 'mariage'): ?>
+                        <?php continue; ?>
+                    <?php endif ?>
                     <?php if ($key%2==0): ?>
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col-md-6 pr-md-0">
@@ -116,6 +122,69 @@
             </div>
         </section>
     <?php endif ?>
+
+
+    <section class="section-primary section-form pb-120">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book a marige event</h2>
+                <span>~ Check out our place ~</span>
+            </div>
+            <form id="reservation-form">
+                <input type="hidden" name="type" value="mariage">
+                <div class="form-inner">
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <select name="people" class="form-control" required data-language="en">
+                                <option value="20 people" selected>20 people</option>
+                                <option value="30 people">30 people</option>
+                                <option value="40 people">40 people</option>
+                                <option value="50 people">50 people</option>
+                                <option value="60 people">60 people</option>
+                                <option value="70 people">70 people</option>
+                                <option value="80 people">80 people</option>
+                                <option value="90 people">90 people</option>
+                                <option value="100 people">100 people</option>
+                                <option value="100 people+">100 people+</option>
+                            </select>
+                            <span class="lnr lnr-chevron-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <input type="text" class="form-control datepicker-here" data-language="en"
+                                data-date-format="dd - mm - yyyy" placeholder="Date" name="date_at" required>
+                            <span class="lnr lnr-calendar-full big"></span>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <input type="text" class="form-control time-picker" placeholder="Time" name="time_at" required>
+                            <span class="lnr lnr-clock big"></span>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <input type="text" class="form-control" placeholder="Phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-holder">
+                            <input type="text" class="form-control" placeholder="Email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-holder">
+                    <button class="au-btn round au-btn--hover has-bg" type="submit">Book now</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
 
 

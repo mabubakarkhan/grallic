@@ -110,7 +110,7 @@ class Home extends CI_Controller {
 		$data['news'] = $this->model->blog();
 		$this->template('index2',$data);
 	}
-	public function mariage()
+	public function marriage()
 	{
 		$data['page'] = $this->model->get_page_byid(5);
 		$data['mariage_nav'] = 'current';
@@ -122,6 +122,19 @@ class Home extends CI_Controller {
 		$data['gallery'] = $this->model->gallery();
 		$data['services'] = $this->model->mariage_services();
 		$this->template('mariage',$data);
+	}
+	public function catering()
+	{
+		$data['page'] = $this->model->get_page_byid(6);
+		$data['catering_nav'] = 'current';
+		$data['meta_title'] = $data['page']['meta_title'];
+		$data['meta_key'] = $data['page']['meta_key'];
+		$data['meta_desc'] = $data['page']['meta_desc'];
+		$data['open_graph'] = $data['page']['open_graph'];
+		$data['slides'] = $this->model->get_mariage_slider();
+		$data['gallery'] = $this->model->gallery();
+		$data['services'] = $this->model->mariage_services();
+		$this->template('catering',$data);
 	}
 	public function events()
 	{

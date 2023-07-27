@@ -43,6 +43,7 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Type</th>
                             <th>Detail</th>
                             <th>Action</th>
                         </tr>
@@ -50,6 +51,7 @@
                     <tfoot>
                         <tr>
                             <th>Title</th>
+                            <th>Type</th>
                             <th>Detail</th>
                             <th>Action</th>
                         </tr>
@@ -60,6 +62,7 @@
                             foreach ($mariage_services as $q): ?>
                                 <tr>
                                     <td><?=$q['title']?></td>
+                                    <td><?=$q['type']?></td>
                                     <td><?=$q['detail']?></td>
                                     <td class="actions">
                                         <a href="javascript:del_q('<?=$q['mariage_service_id']?>')" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"><i class="icon md-delete" aria-hidden="true"></i></a>

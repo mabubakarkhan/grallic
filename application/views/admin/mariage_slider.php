@@ -43,12 +43,14 @@
                     <thead>
                         <tr>
                             <th>Slide</th>
+                            <th>Type</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>Slide</th>
+                            <th>Type</th>
                             <th>Delete</th>
                         </tr>
                     </tfoot>
@@ -58,6 +60,7 @@
                             foreach ($data as $q): ?>
                                 <tr>
                                     <td><img src="<?=UPLOADS.$q['slide']?>" width="100"></td>
+                                    <td><?=$q['type']?></td>
                                     <td class="actions">
                                         <a href="javascript:del_q('<?=$q['mariage_slider_id']?>')" class="btn btn-sm btn-icon btn-pure btn-default on-default remove-row"
                                         data-toggle="tooltip" data-original-title="Remove"><i class="icon md-delete" aria-hidden="true"></i></a>
@@ -71,6 +74,7 @@
                                 <td>
                                     No Slide found in the database
                                 </td>
+                                <td></td>
                                 <td></td>
                             </tr>
                             <?php
@@ -93,6 +97,14 @@
             <div class="modal-body">
 
                 <form action="<?=BASEURL.'admin/post-mariage-slider'?>" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="type" class="form-control" required>
+                            <option value="gallery" selected>Gallery</option>
+                            <option value="mariage">Mariage</option>
+                            <option value="catering">Catering</option>
+                        </select>
+                    </div><!-- /form-group -->
                     <div class="form-group">
                         <label>Photos</label>
                         <input type="file" multiple name="image[]" required="required">
