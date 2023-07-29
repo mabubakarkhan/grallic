@@ -173,7 +173,7 @@
 				<div class="our-menu-alternate">
 
 					<?php foreach ($cats as $key_cat => $cat): ?>
-						<?php if ($cat['deal'] == 'no'): ?>
+						<?php if ($cat['deal'] == 'no' && $cat['show_home'] == 'yes'): ?>
 							<?php
 							if($key_cat%2==0){
 								$classStyle = 'style-2';

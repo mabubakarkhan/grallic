@@ -180,7 +180,7 @@
 									<div class=" col-lg-12 col-sm-9">
 										<?php if ($q['status'] == 'inactive'): ?>
 											<div class="radio-custom radio-primary">
-												<input type="radio" value="inactive" name="status">
+												<input type="radio" value="active" name="status">
 												<label>Active</label>
 											</div><!-- /radio-custom -->
 											<div class="radio-custom radio-primary">
@@ -205,31 +205,61 @@
 			            <div class="col-lg-12 form-horizontal">
 		                	<div class="example-wrap">
 								<div class="form-group form-material">
-									<label class="col-lg-12 col-sm-3 control-label">Deal <span class="required">*</span></label>
+									<label class="col-lg-12 col-sm-3 control-label">Show On Home Page <span class="required">*</span></label>
 									<div class=" col-lg-12 col-sm-9">
-										<?php if ($q['deal'] == 'yes'): ?>
+										<?php if ($q['show_home'] == 'no'): ?>
 											<div class="radio-custom radio-primary">
-												<input type="radio" value="no" name="deal">
-												<label>No</label>
+												<input type="radio" value="yes" name="show_home">
+												<label>Yes</label>
 											</div><!-- /radio-custom -->
 											<div class="radio-custom radio-primary">
-												<input type="radio" value="yes" name="deal" checked="checked">
-												<label>Yes</label>
+												<input type="radio" value="no" name="show_home" checked="checked">
+												<label>NO</label>
 											</div><!-- /radio-custom -->
 										<?php else: ?>
 											<div class="radio-custom radio-primary">
-												<input type="radio" value="no" name="deal" checked="checked">
-												<label>No</label>
+												<input type="radio" value="yes" name="show_home" checked="checked">
+												<label>Yes</label>
 											</div><!-- /radio-custom -->
 											<div class="radio-custom radio-primary">
-												<input type="radio" value="yes" name="deal">
-												<label>Yes</label>
+												<input type="radio" value="no" name="show_home">
+												<label>NO</label>
 											</div><!-- /radio-custom -->
 										<?php endif ?>
 									</div><!-- /12 -->
 								</div><!-- /form-group -->
 							</div><!-- /example-wrap -->
 			            </div><!-- /12/form-horizontal -->
+			            <?php if (1==2): ?>
+				            <div class="col-lg-12 form-horizontal">
+			                	<div class="example-wrap">
+									<div class="form-group form-material">
+										<label class="col-lg-12 col-sm-3 control-label">Deal <span class="required">*</span></label>
+										<div class=" col-lg-12 col-sm-9">
+											<?php if ($q['deal'] == 'yes'): ?>
+												<div class="radio-custom radio-primary">
+													<input type="radio" value="no" name="deal">
+													<label>No</label>
+												</div><!-- /radio-custom -->
+												<div class="radio-custom radio-primary">
+													<input type="radio" value="yes" name="deal" checked="checked">
+													<label>Yes</label>
+												</div><!-- /radio-custom -->
+											<?php else: ?>
+												<div class="radio-custom radio-primary">
+													<input type="radio" value="no" name="deal" checked="checked">
+													<label>No</label>
+												</div><!-- /radio-custom -->
+												<div class="radio-custom radio-primary">
+													<input type="radio" value="yes" name="deal">
+													<label>Yes</label>
+												</div><!-- /radio-custom -->
+											<?php endif ?>
+										</div><!-- /12 -->
+									</div><!-- /form-group -->
+								</div><!-- /example-wrap -->
+				            </div><!-- /12/form-horizontal -->
+			            <?php endif ?>
 
 		           	</div><!-- /row -->
 
