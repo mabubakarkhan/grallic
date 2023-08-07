@@ -56,14 +56,29 @@
 
 		<nav class="navbar-desktop">
 			<div class="left">
-				<a href="<?=BASEURL?>" class="logo">
+				<a href="<?=BASEURL.'home'?>" class="logo">
 					<img src="<?=IMG?>logo.png" alt="Royate">
 				</a>
 			</div>
 			<ul>
 				<li class="<?=$home_page_nav?>">
-					<a href="<?=BASEURL?>">
+					<a href="<?=BASEURL.'home'?>">
 						Home
+					</a>
+				</li>
+				<li class="<?=$about_us_nav?>">
+					<a href="<?=BASEURL.'about-us'?>">
+						About
+					</a>
+				</li>
+				<li class="<?=$mariage_nav?>">
+					<a href="<?=BASEURL.'marriage'?>">
+						Reception Hall
+					</a>
+				</li>
+				<li class="">
+					<a href="<?=BASEURL.'menu'?>">
+						Restaurant
 					</a>
 				</li>
 				<li class="<?=$menu_nav?>">
@@ -71,9 +86,14 @@
 						Menu
 					</a>
 				</li>
-				<li>
-					<a href="<?=UPLOADS.$setting['pdf']?>" target="_balnk">
-						Menu PDF
+				<li class="<?=$catering_nav?>">
+					<a href="<?=BASEURL.'catering'?>">
+						Catering
+					</a>
+				</li>
+				<li class="<?=$gallery_nav?>">
+					<a href="<?=BASEURL.'gallery'?>">
+						Gallery
 					</a>
 				</li>
 				<li class="has-children <?=$category_nav?>" style="display: none;">
@@ -112,26 +132,16 @@
 						Reservation
 					</a>
 				</li>
-				<li class="<?=$events_nav?>">
+				<li class="<?=$contact_us_nav?>">
+					<a href="<?=BASEURL.'contact-us'?>">
+						Contact
+					</a>
+				</li>
+				<!-- <li class="<?=$events_nav?>">
 					<a href="<?=BASEURL.'events'?>">
 						Events
 					</a>
-				</li>
-				<li class="<?=$mariage_nav?>">
-					<a href="<?=BASEURL.'marriage'?>">
-						Mariages
-					</a>
-				</li>
-				<li class="<?=$about_us_nav?>">
-					<a href="<?=BASEURL.'about-us'?>">
-						About Us
-					</a>
-				</li>
-				<li class="<?=$catering_nav?>">
-					<a href="<?=BASEURL.'catering'?>">
-						Catering
-					</a>
-				</li>
+				</li> -->
 			</ul>
 			
 			<div class="action align-items-center">
@@ -262,18 +272,28 @@
 			<nav id="main-nav">
 				<ul>
 					<li class="<?=$home_page_nav?>">
-						<a href="<?=BASEURL?>">
+						<a href="<?=BASEURL.'home'?>">
 							Home
+						</a>
+					</li>
+					<li class="<?=$about_us_nav?>">
+						<a href="<?=BASEURL.'about-us'?>">
+							About
+						</a>
+					</li>
+					<li class="<?=$mariage_nav?>">
+						<a href="<?=BASEURL.'marriage'?>">
+							Reception Hall
+						</a>
+					</li>
+					<li class="">
+						<a href="<?=BASEURL.'menu'?>">
+							Restaurant
 						</a>
 					</li>
 					<li class="<?=$menu_nav?>">
 						<a href="<?=BASEURL.'menu'?>">
 							Menu
-						</a>
-					</li>
-					<li>
-						<a href="<?=UPLOADS.$setting['pdf']?>" target="_balnk">
-							Menu PDF
 						</a>
 					</li>
 					<li class="<?=$category_nav?>" style="display: none;">
@@ -299,29 +319,24 @@
 							<?php endforeach ?>
 						</ul>
 					</li>
+					<li class="<?=$catering_nav?>">
+						<a href="<?=BASEURL.'catering'?>">
+							Catering
+						</a>
+					</li>
+					<li class="<?=$gallery_nav?>">
+						<a href="<?=BASEURL.'gallery'?>">
+							Gallery
+						</a>
+					</li>
 					<li class="<?=$reservation_nav?>">
 						<a href="<?=BASEURL.'reservation'?>">
 							Reservation
 						</a>
 					</li>
-					<li class="<?=$events_nav?>">
-						<a href="<?=BASEURL.'events'?>">
-							Events
-						</a>
-					</li>
-					<li class="<?=$mariage_nav?>">
-						<a href="<?=BASEURL.'marriage'?>">
-							Mariages
-						</a>
-					</li>
-					<li class="<?=$about_us_nav?>">
-						<a href="<?=BASEURL.'about-us'?>">
-							About Us
-						</a>
-					</li>
-					<li class="<?=$catering_nav?>">
-						<a href="<?=BASEURL.'catering'?>">
-							Catering
+					<li class="<?=$contact_us_nav?>">
+						<a href="<?=BASEURL.'contact-us'?>">
+							Contact
 						</a>
 					</li>
 				</ul>

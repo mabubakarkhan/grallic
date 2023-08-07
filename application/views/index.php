@@ -22,7 +22,7 @@
 								data-voffset="['-42','12', '26', '-18', '-28']" data-lineheight="inherit" data-color="#fff">
 								<a href="<?=BASEURL.'product/'.$s['product_slug']?>" class="text-white"><?=$s['product']?></a>
 							</div>
-							<div class="tp-caption tp-resizeme caption-5"
+							<!-- <div class="tp-caption tp-resizeme caption-5"
 								data-frames="[{&quot;delay&quot;:3000,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:{-250,250};y:{-150,150};rX:{-90,90};rY:{-90,90};rZ:{-360,360};sX:0;sY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
 								data-x="center" data-y="middle" data-fontsize="['27', '27', '27', '27', '45']"
 								data-voffset="['54','108', '122', '78', '68']" data-lineheight="inherit"
@@ -32,15 +32,15 @@
 								<i class="zmdi zmdi-star"></i>
 								<i class="zmdi zmdi-star"></i>
 								<i class="zmdi zmdi-star"></i>
-							</div>
-							<div class="tp-caption tp-resizeme caption-6"
+							</div> -->
+							<!-- <div class="tp-caption tp-resizeme caption-6"
 								data-frames="[{&quot;delay&quot;:3200,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
 								data-x="center" data-y="middle" data-voffset="['98', '152', '166', '122', '112']"
 								data-width="['auto']" data-height="['auto']" data-type="image">
 								<img src="<?=IMG?>assure-food-quality.png" alt
 									data-ww="['300px', '300px', '300px', '300px', '300px']"
 									data-hh="['45px', '45px', '45px', '45px', '45px']">
-							</div>
+							</div> -->
 							<div class="tp-caption tp-resizeme caption-form"
 								data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
 								data-x="center" data-y="bottom" data-voffset="['143','93', '73', '78', '73']"
