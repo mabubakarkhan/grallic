@@ -7,14 +7,14 @@
 						<li data-transition>
 							<img src="<?=UPLOADS.$s['img']?>" class="rev-slidebg" alt>
 							
-							<div class="tp-caption tp-resizeme caption-2"
+							<!-- <div class="tp-caption tp-resizeme caption-2"
 								data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
 								data-x="center" data-y="middle" data-voffset="['-165', '-111', '-97', '-141', '-151']"
 								data-width="['auto']" data-height="['auto']" data-type="image">
 								<img src="<?=IMG?>logo.png" alt
 									data-ww="['103px', '103px', '103px', '103px', '103px']"
 									data-hh="['80px', '80px', '80px', '80px', '80px']">
-							</div>
+							</div> -->
 							
 							<div class="tp-caption tp-resizeme caption-4"
 								data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:2000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
@@ -104,7 +104,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="flipster-item">
+						<!-- <li class="flipster-item">
 							<img src="<?=IMG?>flipster-2.jpg" alt class="flipster__image">
 							<div class="content">
 								<div class="heading mb-34">
@@ -120,6 +120,25 @@
 										<h4>Saturday - Sunday</h4>
 										<span>8am - 1pm (Brunch)</span>
 										<span>1am - 10pm (Lunch/Dinner)</span>
+									</div>
+								</div>
+							</div>
+						</li> -->
+						<li class="flipster-item">
+							<img src="<?=IMG?>flipster-2.jpg" alt class="flipster__image">
+							<div class="content">
+								<div class="heading mb-34">
+									<h3>Opening Time</h3>
+								</div>
+								<div class="body">
+									<div class="time">
+										<span>11am - 10pm (Monday)</span>
+										<span style="color: red;">Closed (Tuesday)</span>
+										<span>11am - 10pm (Wednesday)</span>
+										<span>11am - 10pm (Thursday)</span>
+										<span>11am - 10pm (Friday)</span>
+										<span>11am - 10pm (Saturday)</span>
+										<span>11am - 10pm (Sunday)</span>
 									</div>
 								</div>
 							</div>
