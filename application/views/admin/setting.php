@@ -153,6 +153,16 @@
 						</div><!-- /form-group -->
 					</div><!-- /form-horizontal -->
 
+	              	<div class="col-lg-12 form-horizontal">
+	                	<div class="example-wrap">
+							<h4 class="example-title">Logo</h4>
+							<div class="example">
+								<input type="file" id="input-file-now" data-plugin="dropify" data-default-file="<?=UPLOADS.$q['logo']?>"/>
+								<input type="text" name="logo" value="<?=$q['logo']?>" hidden>
+							</div><!-- /example -->
+						</div><!-- /example-wrap -->
+	              	</div><!-- /12/form-horizontal -->
+
 					<div class="col-lg-12 form-horizontal">
 		                <div class="example-wrap">
 							<h4 class="example-title">PDF Menu</h4>
@@ -162,7 +172,6 @@
 							</div><!-- /example -->
 						</div><!-- /example-wrap -->
 	              	</div><!-- /12/form-horizontal -->
-
 
 	              	<div class="form-group form-material col-lg-12 text-right padding-top-m">
 	                	<button type="submit" class="btn btn-primary" id="validateButton1">Submit</button>
@@ -202,5 +211,37 @@ $(function(){
 	        }
 	    });
 	})
+
+	//logo
+	$("#input-file-now").on('change',function(){
+		$("#validateButton1").text('Wait File Is Uploading');
+		var data = new FormData();
+    	data.append('img', $(this).prop('files')[0]);
+    	$(".theatre-cover").fadeIn(300);
+	    $.ajax({
+	        type: 'POST',
+	        processData: false,
+	        contentType: false,
+	        data: data,
+	        url: '<?=BASEURL?>admin/post-photo-ajax',
+	        dataType : 'json',
+	        success: function(resp){
+	        	$(".theatre-cover").fadeOut(300);
+	       		if (resp.status == true)
+	       		{
+	       			$("#validateButton1").removeAttr('disabled');
+	       			$("#validateButton1").text('Submit');
+	       			$("input[name='logo']").val(resp.data);
+	       		}
+	       		else
+	       		{
+	       			alert(resp.msg)
+	       			$("#validateButton1").text('Upload An Image First');
+	       		}
+	        }
+	    });
+	})
+
+
 })
 </script>

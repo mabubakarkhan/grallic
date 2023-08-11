@@ -4,7 +4,11 @@
 				<div class="ft-top-wrapper">
 					<div class="ft-logo">
 						<a href="<?=BASEURL?>">
-							<img src="<?=IMG?>logo.png" width="100">
+							<?php if (empty($setting['logo'])): ?>
+								<img src="<?=IMG?>logo.png" width="100">
+							<?php else: ?>
+								<img src="<?=UPLOADS.$setting['logo']?>" width="100">
+							<?php endif ?>
 						</a>
 					</div>
 					<div class="row justify-content-between justify-content-xl-start">

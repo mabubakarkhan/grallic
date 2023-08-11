@@ -57,7 +57,11 @@
 		<nav class="navbar-desktop">
 			<div class="left">
 				<a href="<?=BASEURL.'home'?>" class="logo">
-					<img src="<?=IMG?>logo.png" alt="Royate">
+					<?php if (empty($setting['logo'])): ?>
+						<img src="<?=IMG?>logo.png" alt="Royate">
+					<?php else: ?>
+						<img src="<?=UPLOADS.$setting['logo']?>" alt="Royate">
+					<?php endif ?>
 				</a>
 			</div>
 			<ul>
@@ -212,7 +216,11 @@
 						</a>
 					</div>
 					<a href="index-2.html" class="logo">
-						<img src="<?=IMG?>logo.png" alt="Royate">
+						<?php if (empty($setting['logo'])): ?>
+							<img src="<?=IMG?>logo.png" alt="Royate">
+						<?php else: ?>
+							<img src="<?=UPLOADS.$setting['logo']?>" alt="Royate">
+						<?php endif ?>
 					</a>
 					<div class="right">
 						<div class="action">
