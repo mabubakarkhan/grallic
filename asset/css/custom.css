@@ -220,3 +220,11 @@ select{
 .deal-box .items ul li:last-child > .line{
     display: none;
 }
+@media (max-width: 1500px){
+    .navbar-desktop:not(.aside).fixed .logo {
+        max-width: 55%;
+    }
+    .navbar-desktop:not(.aside) .logo {
+        max-width: 55%;
+    }
+}
